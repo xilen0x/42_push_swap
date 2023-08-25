@@ -77,60 +77,52 @@ enteros, argumentos superiores a un int, y/o encontrar números duplicados.
 https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0%3A1&mode=design&t=nONFp0J2mEaVbnq3-1
 
 */
-#include <unistd.h>
-#include <stdio.h>
-#include "libft/libft.h"
-//#include <limits.h>
-#include <stdlib.h>
-//#include <ctype.h>
 
-int ft_check_errors(int argc, char *argv[])
+#include "../include/push_swap.h"
+
+int	ft_check_errors(int argc, char *argv[])
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
+	int	num;
 
-    i = 0;
-    j = 1;
-
-    if (argc > __INT_MAX__)
-        return (1);
-
-    while (argv[j])
-    {
-        i = 0;
-        while (argv[j][i])
-        {
-            if (!ft_isdigit(argv[j][i]))
-                return (1);
-            i++;
-        }
-
-        int num = atoi(argv[j]); // Convertir el valor del string a entero
-        if (num > __INT_MAX__)    // Comparar con __INT_MAX__
-            return (1);
-
-        j++;
-    }
-
-    return (0);
+	i = 0;
+	j = 1;
+	if (argc > __INT_MAX__)
+		return (1);
+	while (argv[j])
+	{
+		i = 0;
+		while (argv[j][i])
+		{
+			if (!ft_isdigit(argv[j][i]))
+				return (1);
+			i++;
+		}
+		num = ft_atoi(argv[j]); // Convertir el valor del string a entero
+		if (num > __INT_MAX__)
+			return (1);
+		j++;
+	}
+	return (0);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-    if (argc > 1)
-    {
-        argv++;
-        if (argc == 2)
-            argv = ft_split(*argv, ' ');
-        if (ft_check_errors(argc, argv) == 1)
-        {
-            write(2, "Error\n", 6);
-        }
-        else
-        {
-            //push_swap(argv);
-            printf("No hubo errores\n");
-        }
-    }
-    return (0);
+	if (argc > 1)
+	{
+		argv++;
+		if (argc == 2)
+			argv = ft_split(*argv, ' ');
+		if (ft_check_errors(argc, argv) == 1)
+		{
+			write(2, "Error\n", 6);
+		}
+		else
+		{
+			//push_swap(argv);
+			printf("No hubo errores\n");
+		}
+	}
+	return (0);
 }

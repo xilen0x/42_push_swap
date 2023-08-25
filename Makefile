@@ -10,24 +10,28 @@
 #                                                                              #
 # **************************************************************************** #
 
-# ----------------- Variables ---------------------
-NAME = push_swap.a
-
+# ----------------------------------------
+NAME = push_swap
+LIBFT_DIR = libft/
+LIBFT_FILE = libft.a
+LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_FILE))
+SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
-SRC = push_swap.c
+# ----------------- SRCs -----------------------
+SRC = $(addprefix $(SRC_DIR), push_swap.c)
+
+# ----------------- OBJS ----------------------
 
 OBJS = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
+# ----------------- OTHERS -----------------------
+
 DEPS = $(addsuffix .d, $(basename $(OBJS)))
 MK = mkdir -p
-
 CFLAGS	= -Wall -Wextra -Werror
-
-INCLUDE = -I ./
-
+INCLUDE = -I ./include/ -I ./libft/include/
 RM	= rm -rf
-
 CC	= gcc
 
 # -------------------- Rules --------------------
@@ -40,7 +44,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Building... $@"
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJS) $(LIBFT)
 
 -include $(DEPS)
 
