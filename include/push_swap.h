@@ -1,48 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: castorga <castorga@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 15:14:12 by castorga          #+#    #+#             */
+/*   Updated: 2023/09/04 15:14:15 by castorga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+/*# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <errno.h>*/
 
-typedef struct lst_stack
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+/*typedef struct lst_stack
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 }	t_stack;
+*/
 
-//void	push_swap(char **str);
-int		ft_check_errors(int argc, char *argv[]);
-/*t_list	*parse(char **str);
-int		check_digits(char *str);
-int		check_duplicates(t_list *stack);
-int		ft_atol(const char *str);
-char	*check_zeros(char *input);
+//t_dlist	*init_stack_a(int argc, char *argv[]);
 
-void	swap_a(t_stack *stk, int print);
-void	swap_b(t_stack *stk, int print);
-void	swap_s(t_stack *stk, int print);
-
-void	push_a(t_stack *stk, int print);
-void	push_b(t_stack *stk, int print);
-
-void	rotate_a(t_stack *stk, int print);
-void	rotate_b(t_stack *stk, int print);
-void	rotate_r(t_stack *stk, int print);
-
-void	reverse_rotate_a(t_stack *stk, int print);
-void	reverse_rotate_b(t_stack *stk, int print);
-void	reverse_rotate_r(t_stack *stk, int print);
-
-void	sort_3(t_stack *stk);
-void	init_sort(t_stack *stk);
-
-int		*stk_limits(t_list *lst);
-t_list	*calculate_moves(t_stack *stk, int *limits, int id);
-void	*calc_rot(t_list *lst, int *value, int stack, t_list **action);
-void	check_merge(t_list **lst);
-void	add_push(t_list **action, int stack);
-
-void	parse_move(t_stack *stk, t_list *actions);
-int		finish_check(t_stack *stk);*/
+int		ft_check_errors(int argc, char *av[]);
+int		ft_isdigit(int num);
+int		ft_atoi(const char *str);
+char	**ft_split(const char *s, char c);
+int		check_duplic(char *argv[]);
 
 #endif

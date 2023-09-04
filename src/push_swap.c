@@ -80,48 +80,49 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-int	ft_check_errors(int argc, char *argv[])
+int	push_swap(char *av[])
 {
-	int	i;
-	int	j;
-	int	num;
+	//inicializar lista, guardar cada elemnto(numero) en un nodo
+	t_list	*new_list;
+	t_list	*new_node;
+	void	*content;
 
-	i = 0;
-	j = 1;
-	if (argc > __INT_MAX__)
-		return (1);
-	while (argv[j])
-	{
-		i = 0;
-		while (argv[j][i])
-		{
-			if (!ft_isdigit(argv[j][i]))
-				return (1);
-			i++;
-		}
-		num = ft_atoi(argv[j]); // Convertir el valor del string a entero
-		if (num > __INT_MAX__)
-			return (1);
-		j++;
-	}
+	new_list = NULL;
+	//stack_b == NULL; recom.
+
+	//if stack == 2
+		//ya esta ordenado? dejar igual,
+		//else --> swap
+
+	//if stack == 3
+		//ya esta ordenado? --> already_order()
+		//else ...ordenar
+
+	//if stack == 5
+		//ya esta ordenado? --> already_order()
+		//else ...ordenar
+
+	//else
+		//ya esta ordenado? --> already_order()
+		//else ...ordenar
+
 	return (0);
 }
 
-int	main(int argc, char *argv[])
+int	main(int ac, char *av[])
 {
-	if (argc > 1)
+	if (ac > 1)
 	{
-		argv++;
-		if (argc == 2)
-			argv = ft_split(*argv, ' ');
-		if (ft_check_errors(argc, argv) == 1)
-		{
+		if (ac == 2 && !av[1][0])
+			return (0);
+		else if (ac == 2)
+			av = ft_split(av[1], ' ');
+		if ((ft_check_errors(ac, av) == 1) || (ft_check_duplic(av) == 1))
 			write(2, "Error\n", 6);
-		}
 		else
 		{
-			//push_swap(argv);
-			printf("No hubo errores\n");
+            push_swap(av);
+			//printf("No hubo errores hasta aqui...\n");
 		}
 	}
 	return (0);
