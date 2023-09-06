@@ -1,5 +1,12 @@
-libft/libft.a
+.*
+.DS_Store
+*.out
+*.o
+42-EXAM/
+/obj/*
+a.out.dSYM
+*/a.out.dSYM/*
+push_swap.h.gch
+libft/
 libft/obj/
-obj/
-push_swap
-
+src/check_argc.c

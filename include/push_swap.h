@@ -14,17 +14,12 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+# include <limits.h>
+# include <stdlib.h>
 /*# include <unistd.h>
 # include <string.h>
-# include <stdlib.h>
 # include <stdio.h>
 # include <errno.h>*/
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 /*typedef struct lst_stack
 {
@@ -35,10 +30,11 @@ typedef struct s_list
 
 //t_dlist	*init_stack_a(int argc, char *argv[]);
 
-int		ft_check_errors(int argc, char *av[]);
-int		ft_isdigit(int num);
+int		ft_check_argv_are_valid(char *av[]);
+int		ft_check_ac_is_valid(int ac, char *av[]);
+/*int		ft_isdigit(int num);
 int		ft_atoi(const char *str);
-char	**ft_split(const char *s, char c);
-int		check_duplic(char *argv[]);
+char	**ft_split(const char *s, char c);*/
+int		ft_check_duplic(char *argv[]);
 
 #endif

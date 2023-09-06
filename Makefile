@@ -19,7 +19,7 @@ SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
 # ----------------- SRCs -----------------------
-SRC = $(addprefix $(SRC_DIR), push_swap.c)
+SRC = $(addprefix $(SRC_DIR), push_swap.c check_argv.c check_argc)
 
 # ----------------- OBJS ----------------------
 
@@ -32,7 +32,7 @@ MK = mkdir -p
 CFLAGS	= -Wall -Wextra -Werror
 INCLUDE = -I ./include/ -I ./libft/include/
 RM	= rm -rf
-CC	= gcc
+CC	= clang -g
 
 # -------------------- Rules --------------------
 $(OBJ_DIR)%.o: %.c Makefile

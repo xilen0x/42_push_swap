@@ -17,17 +17,17 @@ int	ft_free()
 	return (0);
 }
 
+/*----------CHECK DUPLICATES----------*/
 int	ft_check_duplic(char *av[])
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
-	i = 0;
-	j = 0;
+	i = 1;
 	while (av[i])
 	{
 		j = 0;
-		while (av[j])
+		while (av[i][j])
 		{
 			if (ft_strncmp(av[i], av[j], 11) == 0)//si es == 0 ambos caract. son iguales
 				return (1);
@@ -38,29 +38,27 @@ int	ft_check_duplic(char *av[])
 	return (0);
 }
 
-int	ft_check_errors(int argc, char *av[])
+/*----------CHECK AV----------*/
+int	ft_check_argv_are_valid(char *av[])
 {
 	int	i;
 	int	j;
 	int	num;
 
-	i = 0;
-	j = 1;
-	if (argc > __INT_MAX__)
-		return (1);
-	while (av[j])
+	i = 1;
+	while (av[i])
 	{
-		i = 0;
-		while (av[j][i])
+		j = 0;
+		while (av[i][j])
 		{
-			if (!ft_isdigit(av[j][i]))//retorna 1 si es digito
+			if (!ft_isdigit(av[i][j]))//if it's not a digit
 				return (1);
-			i++;
+			j++;
 		}
-		num = ft_atoi(av[j]);
-		if (num > __INT_MAX__)
+		num = ft_atoi(av[i]);
+		if (num < INT_MIN || num > INT_MAX)
 			return (1);
-		j++;
+		i++;
 	}
 	return (0);
 }

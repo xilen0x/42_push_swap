@@ -80,14 +80,14 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-int	push_swap(char *av[])
+/*int	push_swap(char *av[])
 {
-	//inicializar lista, guardar cada elemnto(numero) en un nodo
-	t_list	*new_list;
-	t_list	*new_node;
-	void	*content;
+	//inicializar lista, guardar cada elemento(numero) en un nodo
+	//t_list	*new_list;
+	//t_list	*new_node;
+	//void	*content;
 
-	new_list = NULL;
+	//new_list = NULL;
 	//stack_b == NULL; recom.
 
 	//if stack == 2
@@ -107,22 +107,37 @@ int	push_swap(char *av[])
 		//else ...ordenar
 
 	return (0);
-}
+}*/
 
-int	main(int ac, char *av[])
+int	main(int ac, char **av)
 {
+	char	**nums;
+
 	if (ac > 1)
 	{
-		if (ac == 2 && !av[1][0])
-			return (0);
-		else if (ac == 2)
-			av = ft_split(av[1], ' ');
-		if ((ft_check_errors(ac, av) == 1) || (ft_check_duplic(av) == 1))
+		nums = ft_check_ac_is_valid(ac, av);
+		printf("teste1");
+		//av = ft_atoi(av[1]);
+		if ((av == 1) || (ft_check_duplic(av) == 1))
 			write(2, "Error\n", 6);
 		else
 		{
-            push_swap(av);
-			//printf("No hubo errores hasta aqui...\n");
+			/*
+			//push_swap(av);
+			
+			int	i = 0;
+			while (av[i])
+			{
+				int j = 0;
+				while (av[i][j])
+				{
+					printf("%c\n", av[i][j]);
+					j++;
+				}
+				i++;
+			}
+			return (0);*/
+			printf("teste2");
 		}
 	}
 	return (0);
