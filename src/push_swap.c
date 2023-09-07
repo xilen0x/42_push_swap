@@ -111,8 +111,6 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 int	main(int ac, char **av)
 {
-	//char	**nums;
-
 	if (ac > 1)
 	{
 		if (ft_check_argv_are_valid(ac, av) == 1)

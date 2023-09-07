@@ -40,7 +40,7 @@ int	ft_check_digits(int ac, char *av[])
 	return (0);
 }
 
-int	check_value_range(int ac, char *av[])
+int	ft_check_range(int ac, char *av[])
 {
 	int	i;
 
@@ -57,7 +57,7 @@ int	check_value_range(int ac, char *av[])
 	return (0);
 }
 
-/*----------CHECK DUPLICATES----------*/
+/*---------- CHECK DUPLICATES ----------*/
 int	ft_check_duplic(int ac, char *av[])
 {
 	int	i;
@@ -71,7 +71,7 @@ int	ft_check_duplic(int ac, char *av[])
 		len = ft_strlen(av[i]);
 		while (j < (ac - 1))
 		{
-			if (ft_strncmp(av[i], av[j + 1], len) == 0)
+			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
 			{
 				write(2, "Duplicated found!\n", 18);
 				return (1);
@@ -85,17 +85,16 @@ int	ft_check_duplic(int ac, char *av[])
 }
 
 
-/*----------CHECK IF ARGV ARE VALID NUMBERS----------*/
+/*---------- CHECK IF ARGV ARE VALID NUMBERS ----------*/
 int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ac == 1)
 		return (1);
 	if (ft_check_digits(ac, av) == 1)
 		return (1);
-	if (check_value_range(ac, av) == 1)
+	if (ft_check_range(ac, av) == 1)
 		return (1);
 	if (ft_check_duplic(ac, av) == 1)
 		return (1);
 	return (0);
 }
-
