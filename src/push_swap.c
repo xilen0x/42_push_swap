@@ -109,22 +109,19 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 	return (0);
 }*/
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    char **nums;
+	//char	**nums;
 
-    if (ac > 2)
-    {
-        nums = ft_check_argv_are_valid(ac, av);
-        if (nums != NULL)
-        {
-            if (ft_check_duplic(nums, ac) != 1)
-            {
-                printf("todo ok hasta aqui!");
-            }
-            free(nums); // No olvides liberar la memoria asignada
-        }
-    }
-    return (0);
+	if (ac > 1)
+	{
+		if (ft_check_argv_are_valid(ac, av) == 1)
+			return (1);
+		else
+		{
+			printf("todo ok hasta aqui!");
+		}
+	}
+	return (0);
 }
 

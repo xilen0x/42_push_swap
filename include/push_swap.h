@@ -30,11 +30,11 @@
 
 //t_dlist	*init_stack_a(int argc, char *argv[]);
 
-char	**ft_check_argv_are_valid(int ac, char *av[]);
+int	ft_check_argv_are_valid(int ac, char *av[]);	
 //int		ft_check_ac_is_valid(int ac, char *av[]);
 /*int		ft_isdigit(int num);
 int		ft_atoi(const char *str);
 char	**ft_split(const char *s, char c);*/
-int ft_check_duplic(char *av[], int ac);
+int	ft_check_duplic(int ac, char *av[]);
 
 #endif
