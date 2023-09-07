@@ -22,14 +22,16 @@ int	ft_check_duplic(char *av[])
 {
 	int	i;
 	int	j;
+	int	len = 0;
 
-	i = 1;
-	while (av[i])
+	i = 1;		//   i 1  2  3
+	while (av[i])//  124 52 45
 	{
 		j = 0;
 		while (av[i][j])
 		{
-			if (ft_strncmp(av[i], av[j], 11) == 0)//si es == 0 ambos caract. son iguales
+			len = ft_strlen(av[i]);
+			if (ft_strncmp(av[i], av[j], len) == 0)//si es == 0 ambos caract. son iguales
 				return (1);
 			j++;
 		}
@@ -38,25 +40,17 @@ int	ft_check_duplic(char *av[])
 	return (0);
 }
 
-/*----------CHECK AV----------*/
+/*----------CHECK IF ARGV ARE VALID NUMBERS----------*/
 int	ft_check_argv_are_valid(char *av[])
 {
 	int	i;
-	int	j;
-	int	num;
+	int	nums;
 
 	i = 1;
 	while (av[i])
 	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))//if it's not a digit
-				return (1);
-			j++;
-		}
-		num = ft_atoi(av[i]);
-		if (num < INT_MIN || num > INT_MAX)
+		nums = ft_atoi(av[i]);
+		if (!(nums) || (nums < INT_MIN) || (nums > INT_MAX))
 			return (1);
 		i++;
 	}

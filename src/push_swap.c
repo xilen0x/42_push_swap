@@ -111,14 +111,9 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 int	main(int ac, char **av)
 {
-	char	**nums;
-
 	if (ac > 1)
 	{
-		nums = ft_check_ac_is_valid(ac, av);
-		printf("teste1");
-		//av = ft_atoi(av[1]);
-		if ((av == 1) || (ft_check_duplic(av) == 1))
+		if (ft_check_argv_are_valid(av) || ft_check_duplic(av))
 			write(2, "Error\n", 6);
 		else
 		{
@@ -137,7 +132,7 @@ int	main(int ac, char **av)
 				i++;
 			}
 			return (0);*/
-			printf("teste2");
+			printf("todo ok hasta aqui!");
 		}
 	}
 	return (0);

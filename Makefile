@@ -19,7 +19,7 @@ SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
 # ----------------- SRCs -----------------------
-SRC = $(addprefix $(SRC_DIR), push_swap.c check_argv.c check_argc)
+SRC = $(addprefix $(SRC_DIR), push_swap.c check_argv.c)
 
 # ----------------- OBJS ----------------------
 
