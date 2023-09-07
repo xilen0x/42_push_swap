@@ -26,13 +26,20 @@
 	t_list	*stack_a;
 	t_list	*stack_b;
 }	t_stack;
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+t_dlist	*init_stack_a(int argc, char *argv[]);
 */
-
-//t_dlist	*init_stack_a(int argc, char *argv[]);
-
-int	ft_check_argv_are_valid(int ac, char *av[]);	
-int	ft_check_duplic(int ac, char *av[]);
-int	ft_check_digits(int ac, char *av[]);
-int	ft_check_range(int ac, char *av[]);
+int		ft_check_argv_are_valid(int ac, char *av[]);	
+int		ft_check_duplic(int ac, char *av[]);
+int		ft_check_digits(int ac, char *av[]);
+int		ft_check_range(int ac, char *av[]);
+char	**ft_if_ac_is_2(int ac, char *av[]);
+int		push_swap(char *av[]);
 
 #endif

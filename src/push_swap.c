@@ -80,7 +80,7 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-/*int	push_swap(char *av[])
+int	push_swap(char *av[])
 {
 	//inicializar lista, guardar cada elemento(numero) en un nodo
 	//t_list	*new_list;
@@ -107,19 +107,33 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 		//else ...ordenar
 
 	return (0);
-}*/
+}
 
 int	main(int ac, char **av)
 {
+	char	**split_result;
+
 	if (ac > 1)
 	{
-		if (ft_check_argv_are_valid(ac, av) == 1)
+		if (ac == 2)
+		{
+			split_result = ft_if_ac_is_2(ac, av);
+			printf("split por aqui");
+			int i = 0;
+			while (split_result[i])
+			{
+				printf("\n%c", *split_result[i]);
+				i++;
+			}
+			//push_swap();
+		}
+		else if (ft_check_argv_are_valid(ac, av) == 1)
 			return (1);
 		else
 		{
-			printf("todo ok hasta aqui!");
+			printf("todo ok hasta aqui!...creo :)");
+			//push_swap();
 		}
 	}
 	return (0);
 }
-

@@ -21,7 +21,7 @@ int	ft_check_digits(int ac, char *av[])
 {
 	int	i;
 	int	j;
-	
+
 	i = 1;
 	j = 0;
 	while (i < ac)
@@ -30,7 +30,7 @@ int	ft_check_digits(int ac, char *av[])
 		{
 			if (!ft_isdigit(av[i][j]))
 			{
-				write(2, "Error\n", 6);
+				write(2, "Not digit\n", 10);
 				return (1);
 			}
 			j++;
