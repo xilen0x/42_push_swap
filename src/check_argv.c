@@ -18,41 +18,55 @@ int	ft_free()
 }
 
 /*----------CHECK DUPLICATES----------*/
-int	ft_check_duplic(char *av[])
+int ft_check_duplic(char *av[], int ac)
 {
-	int	i;
-	int	j;
-	int	len = 0;
+    int i;
+    int j;
+    int len;
 
-	i = 1;		//   i 1  2  3
-	while (av[i])//  124 52 45
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			len = ft_strlen(av[i]);
-			if (ft_strncmp(av[i], av[j], len) == 0)//si es == 0 ambos caract. son iguales
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+    i = 1;
+    while (i < ac)
+    {
+        len = ft_strlen(av[i]);
+        j = 0;
+        while (av[i][j])
+        {
+            if (ft_strncmp(av[i], av[i + 1], len) == 0)
+            {
+                write(2, "Duplicated found!\n", 18);
+                return (1);
+            }
+            j++;
+        }
+        i++;
+    }
+    return (0);
 }
+
 
 /*----------CHECK IF ARGV ARE VALID NUMBERS----------*/
-int	ft_check_argv_are_valid(char *av[])
+char	**ft_check_argv_are_valid(int ac, char *av[])
 {
-	int	i;
-	int	nums;
+	int		i;
+	char	**nums;
+	long	num;
 
 	i = 1;
+	nums = (char **)malloc(sizeof(char *) * (ac - 1));
+	if (!nums)
+		return (NULL);
 	while (av[i])
 	{
-		nums = ft_atoi(av[i]);
-		if (!(nums) || (nums < INT_MIN) || (nums > INT_MAX))
-			return (1);
+		num = ft_atoi(av[i]);
+		if (num < INT_MIN || num > INT_MAX)
+		{
+			free(nums);
+			write(2, "MIN/MAX Error\n", 14);
+			return (NULL);
+		}
+		nums[i - 1] = ft_strdup(av[i]);
 		i++;
 	}
-	return (0);
+	return (nums);
 }
+
