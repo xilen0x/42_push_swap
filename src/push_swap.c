@@ -80,7 +80,7 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-int	push_swap(char *av[])
+/*int	push_swap(char *av[])
 {
 	//inicializar lista, guardar cada elemento(numero) en un nodo
 	//t_list	*new_list;
@@ -107,7 +107,7 @@ int	push_swap(char *av[])
 		//else ...ordenar
 
 	return (0);
-}
+}*/
 
 int	main(int ac, char **av)
 {
@@ -115,14 +115,16 @@ int	main(int ac, char **av)
 
 	if (ac > 1)
 	{
-		if (ac == 2)
+		if (ft_check_argv_are_valid(ac, av) == 1)
+			return (1);	
+		if (ac == 2)// error al pasar solo 1 param...???
 		{
 			split_result = ft_if_ac_is_2(ac, av);
-			printf("split por aqui");
+			printf("Split was used!");
 			int i = 0;
 			while (split_result[i])
 			{
-				printf("\n%c", *split_result[i]);
+				printf("\n%s", split_result[i]);
 				i++;
 			}
 			//push_swap();

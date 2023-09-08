@@ -62,13 +62,11 @@ int	ft_check_duplic(int ac, char *av[])
 {
 	int	i;
 	int	j;
-	int	len;
 
 	i = 1;
 	j = 1;
 	while (i < ac)
 	{
-		len = ft_strlen(av[i]);
 		while (j < (ac - 1))
 		{
 			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
@@ -85,7 +83,7 @@ int	ft_check_duplic(int ac, char *av[])
 }
 
 
-/*---------- CHECK IF ARGV ARE VALID NUMBERS ----------*/
+/*------------------ CHECKS ------------------*/
 int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ac == 1)
