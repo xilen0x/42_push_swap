@@ -16,7 +16,7 @@
 {
 	return (0);
 }*/
-
+/*---------- CHECK DIGITS ----------*/
 int	ft_check_digits(int ac, char *av[])
 {
 	int	i;
@@ -39,7 +39,7 @@ int	ft_check_digits(int ac, char *av[])
 	}
 	return (0);
 }
-
+/*---------- CHECK RANGE AV ----------*/
 int	ft_check_range(int ac, char *av[])
 {
 	int	i;
@@ -87,12 +87,20 @@ int	ft_check_duplic(int ac, char *av[])
 int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ac == 1)
+	{
 		return (1);
+	}
 	if (ft_check_digits(ac, av) == 1)
+	{
 		return (1);
+	}
 	if (ft_check_range(ac, av) == 1)
+	{
 		return (1);
+	}
 	if (ft_check_duplic(ac, av) == 1)
+	{
 		return (1);
+	}
 	return (0);
 }

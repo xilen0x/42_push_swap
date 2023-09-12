@@ -34,7 +34,7 @@ char	*ft_strchr(const char *s, int c)
 
 	c_to_find = c;
 	while (*s != c_to_find)
-	{	
+	{
 		if (*s == 0)
 			return (0);
 		s++;

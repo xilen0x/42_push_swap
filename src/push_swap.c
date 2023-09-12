@@ -115,11 +115,16 @@ int	main(int ac, char **av)
 
 	if (ac > 1)
 	{
-		if (ft_check_argv_are_valid(ac, av) == 1)
-			return (1);	
-		if (ac == 2)// error al pasar solo 1 param...???
+		ft_check_argv_are_valid(ac, av);
+		if (ac == 2)
 		{
 			split_result = ft_if_ac_is_2(ac, av);
+
+			if (ft_check_duplic(ac, split_result) == 1)//no detecta duplic. x casos tipo: "45 55 66 55"
+			{
+				write(2, "Duplicated found in the string!\n", 18);
+				return (1);
+			}
 			printf("Split was used!");
 			int i = 0;
 			while (split_result[i])
@@ -133,7 +138,13 @@ int	main(int ac, char **av)
 			return (1);
 		else
 		{
-			printf("todo ok hasta aqui!...creo :)");
+			printf("todo ok hasta aqui!...");
+			int i = 1;
+			while (av[i])
+			{
+				printf("\n%s", av[i]);
+				i++;
+			}
 			//push_swap();
 		}
 	}
