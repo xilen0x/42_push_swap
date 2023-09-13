@@ -13,7 +13,7 @@
 # ----------------------------------------
 NAME = push_swap
 LIBFT_DIR = libft/
-LIBFT_FILE = libft.a
+LIBFT_FILE = $(LIBFT_DIR)libft.a
 LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_FILE))
 SRC_DIR = ./src/
 OBJ_DIR = ./obj/
@@ -40,21 +40,26 @@ $(OBJ_DIR)%.o: %.c Makefile
 	@$(MK) $(dir $@)
 	@$(CC) $(CFLAGS) -MMD $(INCLUDE) -c $< -o $@
 
-all: $(NAME)
+subsystems:
+	make -C $(LIBFT_DIR) all
+
+all: subsystems $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Building... $@"
-	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIBFT_FILE) -o $(NAME)
 
 -include $(DEPS)
 
 # -------------------- Clean --------------------
 clean:
+	make -C $(LIBFT_DIR) clean
 	$(RM) $(OBJ_DIR)
 
 fclean:	clean
+	make -C $(LIBFT_DIR) fclean
 	$(RM) $(NAME)
 
 re:	fclean $(NAME)
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re subsystems
