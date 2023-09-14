@@ -33,12 +33,11 @@ int		ft_check_duplic(int ac, char *av[]);
 int		ft_contains_digit(char *str);
 int		ft_check_digits(int ac, char *av[]);
 int		ft_check_range(int ac, char *av[]);
-char	**ft_if_ac_is_2(int ac, char *av[]);
-int		ft_order(char *av);
+
 t_stack	*ft_init_list(char **av);
 t_stack	*ft_newnode(int num);
-t_stack	*ft_stackaddback(t_stack *stack, t_stack *newnode);
-t_stack	*ft_stacklast(t_stack *stack);
+void	ft_stackaddback(t_stack **stack, t_stack *newnode);
+t_stack	*ft_get_last_node(t_stack *stack);
 void	ft_printstack(t_stack *a, t_stack *b);
 
 #endif

@@ -85,13 +85,15 @@ int	push_swap(char *av[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	stack_b = NULL;
+	//----inicializo lista ----
 	stack_a = ft_init_list(av);
+	stack_b = NULL;
+	//----imprimo lista ----
 	ft_printstack(stack_a, stack_b);
 	return (0);
 }
 
-int	main(int ac, char **av)
+int	main(int ac, char *av[])
 {
 	char	**split_result;
 	int		i;
@@ -105,17 +107,17 @@ int	main(int ac, char **av)
 			i = 0;
 			if (ft_check_argv_are_valid(ac, split_result) == 1)
 				return (1);
-			printf("validacion 1");
-			push_swap(split_result + 1);
+			//printf("validacion 1\n");
+			push_swap(split_result);
 		}
 		else
 		{
 			if (ft_check_argv_are_valid(ac, av) == 1)
 				return (1);
-			printf("validacion 2\n");
+			//printf("validacion 2\n");
 			push_swap(av + 1);
 		}
 	}
-	printf("Sin argumentos!");
+	//printf("Sin argumentos!\n");
 	return (0);
 }

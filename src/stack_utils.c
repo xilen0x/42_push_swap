@@ -1,20 +1,14 @@
 
 #include "../include/push_swap.h"
 
-t_stack	*ft_init_list(char **av)
+t_stack	*ft_get_last_node(t_stack *stack)
 {
-	int		i;
-	t_stack	*stack;
-	t_stack	*newnode;
-
-	newnode = NULL;
-	stack = NULL;
-	i = 0;
-	while (av[i])
+	if (stack)
 	{
-		newnode = ft_newnode(atoi(av[i]));
-		stack = ft_stackaddback(stack, newnode);
-		i++;
+		while (stack->next)
+		{
+			stack = stack->next;
+		}
 	}
 	return (stack);
 }
@@ -31,26 +25,35 @@ t_stack	*ft_newnode(int num)
 	return (node);
 }
 
-t_stack	*ft_stackaddback(t_stack *stack, t_stack *newnode)
+void	ft_stackaddback(t_stack **stack, t_stack *newnode)
 {
 	t_stack	*lastnode;
 
+	lastnode = NULL;
 	if (stack != 0)
 	{
-		lastnode = ft_stacklast(stack);
-		if (!lastnode)
-			stack = newnode;
+		lastnode = ft_get_last_node(*stack);
+		if (!lastnode)// Si lastnode es NULL, la lista esta vacía.
+			*stack = newnode;// Asigna el nuevo nodo como el primer nodo de la lista.
 		else
-			lastnode->next = newnode;
+			lastnode->next = newnode;// Enlaza el último nodo actual con el nuevo nodo.
 	}
-	return (stack);
 }
 
-t_stack	*ft_stacklast(t_stack *stack)
+t_stack	*ft_init_list(char **av)
 {
-	while (stack->next)
+	int		i;
+	t_stack	*stack;
+	t_stack	*newnode;
+
+	stack = NULL;
+	newnode = NULL;
+	i = 0;
+	while (av[i])
 	{
-		stack = stack->next;
+		newnode = ft_newnode(ft_atoi(av[i]));
+		ft_stackaddback(&stack, newnode);
+		i++;
 	}
 	return (stack);
 }
@@ -58,15 +61,30 @@ t_stack	*ft_stacklast(t_stack *stack)
 void	ft_printstack(t_stack *a, t_stack *b)
 {
 	printf("------STACK A------\n");
-	while (a)
+	while (a!= NULL)
 	{
-		printf("%i\n",a->num);
+		printf("**********\n");
+		printf("%i\n", a->num);
 		a = a->next;
 	}
 	printf("\n------STACK B------\n");
-	while (b)
+	while (b != NULL)
 	{
-		printf("%i\n",b->num);
+		printf("++++++++++++\n");
+		printf("%i\n", b->num);
 		b = b->next;
 	}
 }
+//------------------------funcion que imprime la lista------------------------
+/*static void	ft_print_list(t_list *lst)
+{
+	int	*data;
+
+	while (lst != NULL)
+	{
+		data = (int *)lst->content; //se obtiene el contenido del nodo actual
+		printf("%d ", *data);// Imprime el contenido del nodo actual
+		lst = lst->next;// Avanza al siguiente nodo de la lista
+	}
+	printf("\n");
+}*/

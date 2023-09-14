@@ -54,7 +54,6 @@ int	ft_check_duplic(int ac, char *av[])
 	{
 		while (j < (ac - 1))
 		{
-			//printf("llega aqui!");
 			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
 				return (1);
 			j++;
