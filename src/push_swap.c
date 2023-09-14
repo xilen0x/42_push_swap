@@ -80,73 +80,42 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-/*int	push_swap(char *av[])
+int	push_swap(char *av[])
 {
-	//inicializar lista, guardar cada elemento(numero) en un nodo
-	//t_list	*new_list;
-	//t_list	*new_node;
-	//void	*content;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-	//new_list = NULL;
-	//stack_b == NULL; recom.
-
-	//if stack == 2
-		//ya esta ordenado? dejar igual,
-		//else --> swap
-
-	//if stack == 3
-		//ya esta ordenado? --> already_order()
-		//else ...ordenar
-
-	//if stack == 5
-		//ya esta ordenado? --> already_order()
-		//else ...ordenar
-
-	//else
-		//ya esta ordenado? --> already_order()
-		//else ...ordenar
-
+	stack_b = NULL;
+	stack_a = ft_init_list(av);
+	ft_printstack(stack_a, stack_b);
 	return (0);
-}*/
+}
 
 int	main(int ac, char **av)
 {
 	char	**split_result;
+	int		i;
 
 	if (ac > 1)
 	{
-		ft_check_argv_are_valid(ac, av);
 		if (ac == 2)
 		{
-			split_result = ft_if_ac_is_2(ac, av);
-
-			if (ft_check_duplic(ac, split_result) == 1)//no detecta duplic. x casos tipo: "45 55 66 55"
-			{
-				write(2, "Duplicated found in the string!\n", 18);
+			split_result = ft_split(av[1], ' ');
+			printf("Split was used!\n");
+			i = 0;
+			if (ft_check_argv_are_valid(ac, split_result) == 1)
 				return (1);
-			}
-			printf("Split was used!");
-			int i = 0;
-			while (split_result[i])
-			{
-				printf("\n%s", split_result[i]);
-				i++;
-			}
-			//push_swap();
+			printf("validacion 1");
+			push_swap(split_result + 1);
 		}
-		else if (ft_check_argv_are_valid(ac, av) == 1)
-			return (1);
 		else
 		{
-			printf("todo ok hasta aqui!...");
-			int i = 1;
-			while (av[i])
-			{
-				printf("\n%s", av[i]);
-				i++;
-			}
-			//push_swap();
+			if (ft_check_argv_are_valid(ac, av) == 1)
+				return (1);
+			printf("validacion 2\n");
+			push_swap(av + 1);
 		}
 	}
+	printf("Sin argumentos!");
 	return (0);
 }

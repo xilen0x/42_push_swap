@@ -16,30 +16,29 @@
 # include "../libft/libft.h"
 # include <limits.h>
 # include <stdlib.h>
-/*# include <unistd.h>
-# include <string.h>
+# include <unistd.h>
+/*# include <string.h>
 # include <stdio.h>
 # include <errno.h>*/
 
-/*typedef struct lst_stack
+typedef struct s_stack
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	int				num;
+	struct s_stack	*next;
 }	t_stack;
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
-t_dlist	*init_stack_a(int argc, char *argv[]);
-*/
+int		push_swap(char *av[]);
 int		ft_check_argv_are_valid(int ac, char *av[]);	
 int		ft_check_duplic(int ac, char *av[]);
+int		ft_contains_digit(char *str);
 int		ft_check_digits(int ac, char *av[]);
 int		ft_check_range(int ac, char *av[]);
 char	**ft_if_ac_is_2(int ac, char *av[]);
-int		push_swap(char *av[]);
+int		ft_order(char *av);
+t_stack	*ft_init_list(char **av);
+t_stack	*ft_newnode(int num);
+t_stack	*ft_stackaddback(t_stack *stack, t_stack *newnode);
+t_stack	*ft_stacklast(t_stack *stack);
+void	ft_printstack(t_stack *a, t_stack *b);
 
 #endif

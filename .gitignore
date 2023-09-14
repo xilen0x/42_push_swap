@@ -10,3 +10,4 @@ push_swap.h.gch
 libft/
 libft/obj/
 src/check_argc.c
+src/*.d

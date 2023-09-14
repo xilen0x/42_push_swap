@@ -1,65 +1,46 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: castorga <castorga@student.42barcel>       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/30 15:08:13 by castorga          #+#    #+#              #
-#    Updated: 2023/06/30 15:08:15 by castorga         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-# ----------------------------------------
 NAME = push_swap
+
 LIBFT_DIR = libft/
-LIBFT_FILE = $(LIBFT_DIR)libft.a
+LIBFT_FILE = libft.a
 LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_FILE))
-SRC_DIR = ./src/
-OBJ_DIR = ./obj/
 
-# ----------------- SRCs -----------------------
-SRC = $(addprefix $(SRC_DIR), push_swap.c check_argv.c check_ac2.c)
+SRCS_DIR = src/
+SRC_FILES =	 push_swap.c check_argv.c stack_utils.c 
 
-# ----------------- OBJS ----------------------
+OBJS_DIR =	objs/
+OBJ_FILES = $(SRC_FILES:.c=.o)
+OBJS = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
+DEPS        := $(OBJS:.o=.d)
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+RM = rm -rf
+AR = ar rc
+INCLUDE  = -I include/ -I libft/
 
-OBJS = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
-
-# ----------------- OTHERS -----------------------
-
-DEPS = $(addsuffix .d, $(basename $(OBJS)))
-MK = mkdir -p
-CFLAGS	= -Wall -Wextra -Werror
-INCLUDE = -I ./include/ -I ./libft/include/
-RM	= rm -rf
-CC	= clang -g
-
-# -------------------- Rules --------------------
-$(OBJ_DIR)%.o: %.c Makefile
-	@echo "Compiling... $<"
-	@$(MK) $(dir $@)
-	@$(CC) $(CFLAGS) -MMD $(INCLUDE) -c $< -o $@
+all: 		$(NAME)
 
 subsystems:
-	make -C $(LIBFT_DIR) all
+			@make -C $(LIBFT_DIR)
 
-all: subsystems $(NAME)
+$(NAME):	subsystems $(OBJS_DIR) $(OBJS)
+			@$(CC) $(CFLAGS) $(OBJS) -L libft/ -lft -o $@
 
-$(NAME): $(OBJS)
-	@echo "Building... $@"
-	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIBFT_FILE) -o $(NAME)
+$(OBJS_DIR):
+						@mkdir $@
 
--include $(DEPS)
+$(OBJS_DIR)%.o:	$(SRCS_DIR)%.c
+				$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
 
-# -------------------- Clean --------------------
-clean:
-	make -C $(LIBFT_DIR) clean
-	$(RM) $(OBJ_DIR)
+clean: 		
+			make -C $(LIBFT_DIR) clean
+			@$(RM) $(OBJS) $(DEPS)
 
-fclean:	clean
-	make -C $(LIBFT_DIR) fclean
-	$(RM) $(NAME)
 
-re:	fclean $(NAME)
+fclean: 	clean
+			make -C $(LIBFT_DIR) fclean
+			@$(RM) $(NAME)
 
-.PHONY:	all clean fclean re subsystems
+re:			fclean all
+-include $(DEPS)			
+
+.PHONY: all clean fclean re subsystems

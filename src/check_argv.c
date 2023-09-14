@@ -12,33 +12,21 @@
 
 #include "../include/push_swap.h"
 
-/*int	ft_free()
-{
-	return (0);
-}*/
 /*---------- CHECK DIGITS ----------*/
 int	ft_check_digits(int ac, char *av[])
 {
 	int	i;
-	int	j;
 
 	i = 1;
-	j = 0;
 	while (i < ac)
 	{
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-			{
-				write(2, "Not digit\n", 10);
-				return (1);
-			}
-			j++;
-		}
+		if (ft_contains_digit(av[i]) == 0)
+			return (1);
 		i++;
 	}
 	return (0);
 }
+
 /*---------- CHECK RANGE AV ----------*/
 int	ft_check_range(int ac, char *av[])
 {
@@ -48,10 +36,7 @@ int	ft_check_range(int ac, char *av[])
 	while (i < ac)
 	{
 		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
-		{
-			write(2, "Error\n", 6);
 			return (1);
-		}
 		i++;
 	}
 	return (0);
@@ -69,11 +54,9 @@ int	ft_check_duplic(int ac, char *av[])
 	{
 		while (j < (ac - 1))
 		{
+			//printf("llega aqui!");
 			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
-			{
-				write(2, "Duplicated found!\n", 18);
 				return (1);
-			}
 			j++;
 		}
 		i++;
@@ -86,20 +69,19 @@ int	ft_check_duplic(int ac, char *av[])
 /*------------------ CHECKS ------------------*/
 int	ft_check_argv_are_valid(int ac, char *av[])
 {
-	if (ac == 1)
-	{
-		return (1);
-	}
 	if (ft_check_digits(ac, av) == 1)
 	{
+		printf("error con digito\n");
 		return (1);
 	}
 	if (ft_check_range(ac, av) == 1)
 	{
+		printf("error con rango\n");
 		return (1);
 	}
 	if (ft_check_duplic(ac, av) == 1)
 	{
+		printf("error de duplicado\n");
 		return (1);
 	}
 	return (0);
