@@ -5,7 +5,7 @@ LIBFT_FILE = libft.a
 LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_FILE))
 
 SRCS_DIR = src/
-SRC_FILES =	 push_swap.c check_argv.c stack_utils.c #pivot.c
+SRC_FILES =	 push_swap.c check_argv.c stack_utils.c pivot.c swap_ab.c
 
 OBJS_DIR =	objs/
 OBJ_FILES = $(SRC_FILES:.c=.o)

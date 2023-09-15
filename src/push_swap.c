@@ -21,6 +21,7 @@ El juego se compone de dos stacks, llamados a y b.
 • Para empezar:
 	◦ En a tendrás números positivos y/o negativos, nunca duplicados.
 	◦ En b no habrá nada.
+	
 • El objetivo es ordenar los números del stack a en orden ascendente.
 • Para hacerlo tienes las siguientes operaciones a tu disposición:
 
@@ -73,7 +74,7 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-int	push_swap(char *av[])
+int	push_swap(int ac, char *av[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -82,10 +83,10 @@ int	push_swap(char *av[])
 	stack_a = ft_init_list(av);
 	stack_b = NULL;
 	//----imprimo lista ----
-	ft_printstack(stack_a, stack_b);
+	//ft_printstack(stack_a, stack_b);
 
 	//----paso stack a algoritmo pivote
-	//ft_pivote(stack_a, stack_b);
+	ft_pivot(stack_a, stack_b, ac);
 	return (0);
 }
 
@@ -104,17 +105,17 @@ int	main(int ac, char *av[])
 				i++;
 			if (i > 1)
 			{
-				if (ft_check_argv_are_valid(ac, split_result) == 1)
+				if (ft_check_argv_are_valid(ac, split_result))
 					return (1);
-				push_swap(split_result);
+				push_swap(i, split_result);
 			}
 			return (0);
 		}
 		else
 		{
-			if (ft_check_argv_are_valid(ac, av) == 1)
+			if (ft_check_argv_are_valid(ac, av))
 				return (1);
-			push_swap(av + 1);
+			push_swap(ac, av + 1);
 		}
 	}
 	return (0);
