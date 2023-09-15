@@ -39,5 +39,6 @@ t_stack	*ft_newnode(int num);
 void	ft_stackaddback(t_stack **stack, t_stack *newnode);
 t_stack	*ft_get_last_node(t_stack *stack);
 void	ft_printstack(t_stack *a, t_stack *b);
+//void	ft_pivote(t_stack *a, t_stack *b);
 
 #endif

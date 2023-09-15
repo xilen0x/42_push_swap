@@ -30,7 +30,7 @@ void	ft_stackaddback(t_stack **stack, t_stack *newnode)
 	t_stack	*lastnode;
 
 	lastnode = NULL;
-	if (stack != 0)
+	if (stack)
 	{
 		lastnode = ft_get_last_node(*stack);
 		if (!lastnode)// Si lastnode es NULL, la lista esta vacía.
@@ -61,30 +61,15 @@ t_stack	*ft_init_list(char **av)
 void	ft_printstack(t_stack *a, t_stack *b)
 {
 	printf("------STACK A------\n");
-	while (a!= NULL)
+	while (a != NULL)
 	{
-		printf("**********\n");
 		printf("%i\n", a->num);
 		a = a->next;
 	}
 	printf("\n------STACK B------\n");
 	while (b != NULL)
 	{
-		printf("++++++++++++\n");
 		printf("%i\n", b->num);
 		b = b->next;
 	}
 }
-//------------------------funcion que imprime la lista------------------------
-/*static void	ft_print_list(t_list *lst)
-{
-	int	*data;
-
-	while (lst != NULL)
-	{
-		data = (int *)lst->content; //se obtiene el contenido del nodo actual
-		printf("%d ", *data);// Imprime el contenido del nodo actual
-		lst = lst->next;// Avanza al siguiente nodo de la lista
-	}
-	printf("\n");
-}*/

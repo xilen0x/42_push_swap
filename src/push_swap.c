@@ -24,12 +24,6 @@ El juego se compone de dos stacks, llamados a y b.
 • El objetivo es ordenar los números del stack a en orden ascendente.
 • Para hacerlo tienes las siguientes operaciones a tu disposición:
 
-sa : swap a - intercambia los dos primeros elementos encima del stack a. No 
-hace nada si hay uno o menos elementos.
-sb : swap b - intercambia los dos primeros elementos encima del stack b. No 
-hace nada si hay uno o menos elementos.
-ss : swap a y swap b a la vez.
-
 pa : push a - toma el primer elemento del stack b y lo pone encima del stack a.
 No hace nada si b está vacío.
 
@@ -68,8 +62,7 @@ Durante la evaluación compararemos el número de instrucciones obtenido por tu
 programa con un rango de instrucciones máximo.
 • Tu programa no recibirá puntos tanto si tu programa muestra una lista 
 demasiado larga como si el resultado no es correcto.
-• Si no se especifican parámetros, el programa no deberá mostrar nada y deberá
-devolver el control al usuario.
+
 • En caso de error, deberás mostrar Error seguido de un “\n” en la salida de 
 errores estándar. Algunos de los posibles errores son: argumentos que no son 
 enteros, argumentos superiores a un int, y/o encontrar números duplicados.
@@ -85,11 +78,14 @@ int	push_swap(char *av[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	//----inicializo lista ----
+	//----llamo a ft_init_list x inicializar lista ----
 	stack_a = ft_init_list(av);
 	stack_b = NULL;
 	//----imprimo lista ----
 	ft_printstack(stack_a, stack_b);
+
+	//----paso stack a algoritmo pivote
+	//ft_pivote(stack_a, stack_b);
 	return (0);
 }
 
@@ -103,21 +99,23 @@ int	main(int ac, char *av[])
 		if (ac == 2)
 		{
 			split_result = ft_split(av[1], ' ');
-			printf("Split was used!\n");
 			i = 0;
-			if (ft_check_argv_are_valid(ac, split_result) == 1)
-				return (1);
-			//printf("validacion 1\n");
-			push_swap(split_result);
+			while (split_result[i])
+				i++;
+			if (i > 1)
+			{
+				if (ft_check_argv_are_valid(ac, split_result) == 1)
+					return (1);
+				push_swap(split_result);
+			}
+			return (0);
 		}
 		else
 		{
 			if (ft_check_argv_are_valid(ac, av) == 1)
 				return (1);
-			//printf("validacion 2\n");
 			push_swap(av + 1);
 		}
 	}
-	//printf("Sin argumentos!\n");
 	return (0);
 }
