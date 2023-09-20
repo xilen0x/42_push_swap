@@ -36,7 +36,7 @@ void	ft_stackaddback(t_stack **stack, t_stack *newnode)
 		if (!lastnode)// Si lastnode es NULL, la lista esta vacía.
 			*stack = newnode;// Asigna el nuevo nodo como el primer nodo de la lista.
 		else
-			lastnode->next = newnode;// Enlaza el último nodo actual con el nuevo nodo.
+			lastnode->next = newnode;// Enlaza el último nodo(actual) con el nuevo nodo.
 	}
 }
 

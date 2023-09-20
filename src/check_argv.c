@@ -70,7 +70,6 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ft_check_digits(ac, av) == 1)
 	{
-		//write(2, "Error/n", 6);antes de entregar reemplazar los print con write
 		printf("error con digito\n");
 		return (1);
 	}

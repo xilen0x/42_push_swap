@@ -115,7 +115,7 @@ int	main(int ac, char *av[])
 		{
 			if (ft_check_argv_are_valid(ac, av))
 				return (1);
-			push_swap(ac, av + 1);
+			push_swap(ac - 1, av + 1);
 		}
 	}
 	return (0);

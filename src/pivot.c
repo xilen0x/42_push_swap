@@ -21,19 +21,19 @@ hace nada si hay uno o menos elementos.*/
 
 void	ft_pivot(t_stack *a, t_stack *b, int ac)
 {
-	if (ac == 3)//2 nums
+	if (ac == 2)
 	{
 		ft_swap_ab(a, b);
 	}
-	else if (ac > 3 && ac <= 4)// 2 y 3 nums
+	else if (ac <= 3)
 	{
 		ft_order_2_3(a, b);
 	}
-	else if (ac > 4 && ac <= 6)// 3 y 5 nums
+	else if (ac < 6)
 	{
 		ft_order_3_5(a, b);
 	}
-	else // ac > 5 nums
+	else
 	{
 		ft_order_more_5(a, b);
 	}
