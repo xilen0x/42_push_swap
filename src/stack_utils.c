@@ -25,7 +25,16 @@ t_stack	*ft_newnode(int num)
 	return (node);
 }
 
-void	ft_stackaddback(t_stack **stack, t_stack *newnode)
+/*void	ft_stack_add_front(t_stack **stack, t_stack *newnode)
+{
+	if (stack != 0)
+	{
+		newnode->next = *stack;
+		*stack = newnode;
+	}
+}*/
+
+void	ft_stack_add_back(t_stack **stack, t_stack *newnode)
 {
 	t_stack	*lastnode;
 
@@ -52,7 +61,7 @@ t_stack	*ft_init_list(char **av)
 	while (av[i])
 	{
 		newnode = ft_newnode(ft_atoi(av[i]));
-		ft_stackaddback(&stack, newnode);
+		ft_stack_add_back(&stack, newnode);
 		i++;
 	}
 	return (stack);
@@ -60,7 +69,7 @@ t_stack	*ft_init_list(char **av)
 
 void	ft_printstack(t_stack *a, t_stack *b)
 {
-	printf("------STACK A------\n");
+	printf("\n------STACK A------\n");
 	while (a != NULL)
 	{
 		printf("%i\n", a->num);

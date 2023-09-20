@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pivot.c                                        :+:      :+:    :+:   */
+/*   push_pa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: castorga <castorga@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 16:22:59 by castorga          #+#    #+#             */
-/*   Updated: 2023/09/04 16:23:01 by castorga         ###   ########.fr       */
+/*   Created: 2023/09/20 16:18:03 by castorga          #+#    #+#             */
+/*   Updated: 2023/09/20 16:18:05 by castorga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*pb : push b - toma el primer elemento del stack a y lo pone encima del stack b.
+No hace nada si a está vacío.*/
 #include "../include/push_swap.h"
 
-void	ft_pivot(t_stack *a, t_stack *b, int ac)
+void	ft_push_pb(t_stack **a, t_stack **b)
 {
-	if (ac == 2)
+	t_stack	*temp;
+
+	if (*a != NULL)
 	{
-		ft_swap_sa(a, b);
-	}
-	else if (ac <= 3)
-	{
-		ft_order_3(a, b);
-	}
-	else if (ac < 6)
-	{
-		ft_order_3_5(a, b);
-	}
-	else
-	{
-		ft_order_more_5(a, b);
+		temp = *a;
+		*a = (*a)->next;
+		temp->next = *b;
+		*b = temp;
 	}
 }

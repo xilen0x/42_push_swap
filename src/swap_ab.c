@@ -28,16 +28,15 @@ int	ft_is_ordered(t_stack *a)
 	return (1);
 }
 
-
-void	ft_swap_ab(t_stack *a, t_stack *b)
+void	ft_swap_sa(t_stack *a, t_stack *b)
 {
 	int	temp;
 
-	printf("ANTES DE swap_ab:\n");
+	printf("********* ANTES DE swap_sa ********* \n");
 	ft_printstack(a, b);
 	if (ft_is_ordered(a))
 	{
-		printf("Lista ya ordenada!\n");
+		printf("\nLista ya ordenada**!\n");
 		return ;
 	}
 	else
@@ -45,29 +44,55 @@ void	ft_swap_ab(t_stack *a, t_stack *b)
 		temp = a->num;
 		a->num = a->next->num;
 		a->next->num = temp;
-		printf("DESPUES DE swap_ab:\n");
+		printf("sa\n");// es asi?
+		printf("********* DESPUES DE swap_sa *********\n");
 		ft_printstack(a, b);
 	}
-
 }
 
-void	ft_order_2_3(t_stack *a, t_stack *b)
+void	ft_order_3(t_stack *a, t_stack *b)
 {
-	printf("ft_order_2_3\n");
+	printf("********* ANTES DE ft_push_pb *********\n");
 	ft_printstack(a, b);
-
+	if (ft_is_ordered(a))
+	{
+		printf("\nLista ya ordenada***!\n");
+		return ;
+	}
+	else
+	{
+		ft_push_pb(&a, &b);
+		printf("********* DESPUES DE ft_push_pb *********\n");
+		ft_printstack(a, b);
+	}
 }
 
 void	ft_order_3_5(t_stack *a, t_stack *b)
 {
-	printf("ft_order_3_5\n");
+	printf("ANTES DE ft_order_3_5:\n");
 	ft_printstack(a, b);
-
+	if (ft_is_ordered(a))
+	{
+		printf("\nLista ya ordenada!\n");
+		return ;
+	}
+	else
+	{
+		printf("\nDo something!\n");
+	}
 }
 
 void	ft_order_more_5(t_stack *a, t_stack *b)
 {
-	printf("ft_order_more_5\n");
+	printf("ANTES DE ft_order_more_5:\n");
 	ft_printstack(a, b);
-
+	if (ft_is_ordered(a))
+	{
+		printf("\nLista ya ordenada!\n");
+		return ;
+	}
+	else
+	{
+		printf("\nDo something!\n");
+	}
 }

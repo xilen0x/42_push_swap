@@ -25,32 +25,6 @@ El juego se compone de dos stacks, llamados a y b.
 • El objetivo es ordenar los números del stack a en orden ascendente.
 • Para hacerlo tienes las siguientes operaciones a tu disposición:
 
-pa : push a - toma el primer elemento del stack b y lo pone encima del stack a.
-No hace nada si b está vacío.
-
-pb : push b - toma el primer elemento del stack a y lo pone encima del stack b.
-No hace nada si a está vacío.
-
-ra : rotate a - desplaza hacia arriba todos los elementos del stack a una 
-posición, de forma que el primer elemento se convierte en el último.
-
-rb : rotate b - desplaza hacia arriba todos los elementos del stack b una 
-posición, de forma que el primer elemento se convierte en el último.
-
-rr : rotate a y rotate b - desplaza al mismo tiempo todos los elementos del 
-stack a y del stack b una posición hacia arriba, de forma que el primer 
-elemento se convierte en el último.
-
-rra : reverse rotate a - desplaza hacia abajo todos los elementos del stack a 
-una posición, de forma que el último elemento se convierte en el primero.
-
-rrb : reverse rotate b - desplaza hacia abajo todos los elementos del stack b 
-una posición, de forma que el último elemento se convierte en el primero.
-
-rrr : reverse rotate a y reverse rotate b - desplaza al mismo tiempo todos
-los elementos del stack a y del stack b una posición hacia abajo, de forma que
-el último elemento se convierte en el primero.
-
 Debes escribir un programa llamado push_swap que recibirá como argumento el
 stack a con el formato de una lista de enteros. El primer argumento debe ser 
 el que esté encima del stack (cuidado con el orden).
