@@ -12,22 +12,6 @@
 
 #include "../include/push_swap.h"
 
-int	ft_is_ordered(t_stack *a)
-{
-	// Si la lista está vacía o tiene un solo elemento, ya está ordenada.
-	if (a == NULL || a->next == NULL)
-		return (1);
-	// Comprobacion si la lista está ordenada ascendentemente.
-	while (a->next != NULL)
-	{
-		// Si se encuentra un elemento mayor que el siguiente, la lista no está ordenada.
-		if (a->num > a->next->num)
-			return (0);
-		a = a->next;
-	}
-	return (1);
-}
-
 void	ft_swap_sa(t_stack *a, t_stack *b)
 {
 	int	temp;
@@ -78,7 +62,9 @@ void	ft_order_3_5(t_stack *a, t_stack *b)
 	}
 	else
 	{
-		printf("\nDo something!\n");
+		ft_rotate(&a);
+		printf("********* DESPUES DE ft_rotate_ra *********\n");
+		ft_printstack(a, b);
 	}
 }
 

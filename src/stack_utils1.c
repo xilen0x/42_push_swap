@@ -25,6 +25,19 @@ t_stack	*ft_newnode(int num)
 	return (node);
 }
 
+int	ft_lst_size(t_stack *stack)
+{
+	int	len;
+
+	len = 0;
+	while (stack != NULL)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return (len);
+}
+
 /*void	ft_stack_add_front(t_stack **stack, t_stack *newnode)
 {
 	if (stack != 0)
