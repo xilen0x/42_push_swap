@@ -16,7 +16,7 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 {
 	if (ac == 2)
 	{
-		ft_swap_sa(a, b);
+		ft_sa(a, b);
 	}
 	else if (ac <= 3)
 	{

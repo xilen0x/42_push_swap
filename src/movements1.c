@@ -10,80 +10,75 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*pb : push b - toma el primer elemento del stack a y lo pone encima del stack b.
-No hace nada si a está vacío.*/
+/*pb : push b - toma el primer elemento del stack a y lo pone encima del 
+stack b. No hace nada si a está vacío.*/
 #include "../include/push_swap.h"
-
-void	ft_push_pb(t_stack **a, t_stack **b)
+/* -------------------------------- SWAP --------------------------------*/
+void	ft_swap(t_stack *ab)
 {
-	t_stack	*temp;
+	int	temp;
 
-	if (*a != NULL)
+	temp = ab->num;
+	ab->num = ab->next->num;
+	ab->next->num = temp;
+}
+
+void	ft_sa(t_stack *a, t_stack *b)
+{
+
+	printf("********* ANTES DE ft_sa ********* \n");
+	ft_printstack(a, b);
+	if (ft_is_ordered(a))
 	{
-		temp = *a;
-		*a = (*a)->next;
-		temp->next = *b;
-		*b = temp;
+		printf("\nLista ya ordenada**!\n");
+		return ;
+	}
+	else
+	{
+		if (ft_lst_size(a) > 1)
+		{
+			ft_swap(a);
+			printf("sa\n");
+		}
+		printf("********* DESPUES DE ft_sa *********\n");
+		ft_printstack(a, b);
 	}
 }
 
-/*pa : push a - toma el primer elemento del stack b y lo pone encima del stack a.
-No hace nada si b está vacío.*/
-void	ft_push_pa(t_stack **a, t_stack **b)
+void	ft_sb(t_stack *a, t_stack *b)
 {
-	t_stack	*temp;
 
-	if (*b != NULL)
+	printf("********* ANTES DE ft_sb ********* \n");
+	ft_printstack(a, b);
+	if (ft_is_ordered(b))
 	{
-		temp = *b;
-		*b = (*b)->next;
-		temp->next = *a;
-		*a = temp;
+		printf("\nLista ya ordenada**!\n");
+		return ;
+	}
+	else
+	{
+		if (ft_lst_size(b) > 1)
+		{
+			ft_swap(b);
+			printf("sb\n");
+		}
+		printf("********* DESPUES DE ft_sb *********\n");
+		ft_printstack(a, b);
 	}
 }
 
-/*ra : rotate a - desplaza hacia arriba todos los elementos del stack 'a' una posición,
-de forma que el primer elemento se convierte en el último.*/
-
-void	ft_rotate(t_stack **ab)
+void	ft_ss(t_stack *a, t_stack *b)
 {
-	t_stack	*temp;
-	t_stack	*lastnode;
-
-	temp = (*ab)->next;
-	lastnode = ft_get_last_node(*ab);
-	lastnode->next = (*ab);
-	(*ab)->next = NULL;
-	(*ab) = temp;
-}
-
-void	ft_ra(t_stack **a)
-{
-	if (ft_lst_size(*a) > 1)
+	if (a && b)
 	{
-		ft_rotate(a);
-		printf("ra\n");
-	}
-}
-
-/*rb : rotate b - desplaza hacia arriba todos los elementos del stack b una posición,
-de forma que el primer elemento se convierte en el último.*/
-
-void	ft_rb(t_stack **b)
-{
-	if (ft_lst_size(*b) > 1)
-	{
-		ft_rotate(b);
-		printf("rb\n");
-	}
-}
-
-void	ft_rr(t_stack **a, t_stack **b)
-{
-	if (*a && *b)
-	{//aqui falta poner los mismos if de arriba 62, 74
-		ft_rotate(a);
-		ft_rotate(b);
-		printf("rr\n");
+		if (ft_lst_size(a) > 1)
+		{
+			ft_swap(a);
+		}
+		if (ft_lst_size(b) > 1)
+		{
+			ft_swap(b);
+		}
+		printf("ss\n");
 	}
 }

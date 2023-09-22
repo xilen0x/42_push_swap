@@ -48,17 +48,6 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 #include "../include/push_swap.h"
 
-int	push_swap(int ac, char *av[])
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	stack_a = ft_init_list(av);
-	stack_b = NULL;
-	ft_pivot(stack_a, stack_b, ac);
-	return (0);
-}
-
 int	main(int ac, char *av[])
 {
 	char	**split_result;
