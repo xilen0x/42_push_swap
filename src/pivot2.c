@@ -17,7 +17,11 @@ void	ft_order_3(t_stack *a, t_stack *b)
 	int	min;
 
 	if (ft_is_ordered(a))
+	{
+		printf("\nLista ya ordenada!\n");
+		ft_printstack(a, b);
 		return ;
+	}
 	else
 	{
 		min = a->num;
@@ -25,9 +29,17 @@ void	ft_order_3(t_stack *a, t_stack *b)
 		{
 			ft_sa(a, b);
 			if (ft_is_ordered(a))
+			{
+				printf("\nLista ya ordenada!\n");
+				ft_printstack(a, b);
 				return ;
+			}
 			else
+			{
 				ft_rra(&a);
+				ft_printstack(a, b);
+				return ;
+			}
 		}
 		else
 			ft_rra(&a);

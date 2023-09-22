@@ -32,6 +32,7 @@ void	ft_sa(t_stack *a, t_stack *b)
 	if (ft_is_ordered(a))
 	{
 		printf("\nLista ya ordenada**!\n");
+		ft_printstack(a, b);
 		return ;
 	}
 	else
@@ -55,6 +56,7 @@ void	ft_sb(t_stack *a, t_stack *b)
 	if (ft_is_ordered(b))
 	{
 		printf("\nLista ya ordenada**!\n");
+		ft_printstack(a, b);
 		return ;
 	}
 	else
