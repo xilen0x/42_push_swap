@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*pb : push b - toma el primer elemento del stack a y lo pone encima del 
-stack b. No hace nada si a está vacío.*/
+
 #include "../include/push_swap.h"
 /* -------------------------------- SWAP --------------------------------*/
 void	ft_swap(t_stack *ab)
@@ -23,11 +22,13 @@ void	ft_swap(t_stack *ab)
 	ab->next->num = temp;
 }
 
+/*
+sa : swap a - intercambia los dos primeros elementos encima del stack a. No hace
+nada si hay uno o menos elementos.
+*/
+
 void	ft_sa(t_stack *a, t_stack *b)
 {
-
-	printf("********* ANTES DE ft_sa ********* \n");
-	ft_printstack(a, b);
 	if (ft_is_ordered(a))
 	{
 		printf("\nLista ya ordenada**!\n");
@@ -39,12 +40,13 @@ void	ft_sa(t_stack *a, t_stack *b)
 		{
 			ft_swap(a);
 			printf("sa\n");
+			ft_printstack(a, b);
 		}
-		printf("********* DESPUES DE ft_sa *********\n");
-		ft_printstack(a, b);
 	}
 }
 
+/*sb : swap b - intercambia los dos primeros elementos encima del stack b. No hace
+nada si hay uno o menos elementos.*/
 void	ft_sb(t_stack *a, t_stack *b)
 {
 

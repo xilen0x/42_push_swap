@@ -14,19 +14,24 @@
 
 void	ft_order_3(t_stack *a, t_stack *b)
 {
-	printf("********* ANTES DE ft_pb *********\n");
-	ft_printstack(a, b);
+	int	min;
+
 	if (ft_is_ordered(a))
-	{
-		printf("\nLista ya ordenada***!\n");
 		return ;
-	}
 	else
 	{
-		//ft_pa(a, b);
-		ft_pb(a, b);//this line just to test
-		printf("********* DESPUES DE ft_pb *********\n");
-		//ft_printstack(a, b);
+		min = a->num;
+		if ((a->next->num) < min)
+		{
+			ft_sa(a, b);
+			if (ft_is_ordered(a))
+				return ;
+			else
+				ft_rra(&a);
+		}
+		else
+			ft_rra(&a);
+		ft_printstack(a, b);
 	}
 }
 
@@ -42,7 +47,8 @@ void	ft_order_3_5(t_stack *a, t_stack *b)
 	else
 	{
 		//ft_rotate(a);
-		ft_rra(a);
+		//ft_rra(&a);
+		
 		printf("********* DESPUES DE *********\n");
 		ft_printstack(a, b);
 	}

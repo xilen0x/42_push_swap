@@ -62,17 +62,17 @@ void	ft_sb(t_stack *a, t_stack *b);
 void	ft_ss(t_stack *a, t_stack *b);
 void	ft_swap(t_stack *ab);
 
-void	ft_pb(t_stack *a, t_stack *b);
 void	ft_pa(t_stack *a, t_stack *b);
+void	ft_pb(t_stack *a, t_stack *b);
 
 void	ft_ra(t_stack *a);
 void	ft_rb(t_stack *b);
 void	ft_rr(t_stack *a, t_stack *b);
 void	ft_rotate(t_stack *ab);
 
-void	ft_rra(t_stack *a);
-void	ft_rrb(t_stack *b);
+void	ft_rra(t_stack **a);
+void	ft_rrb(t_stack **b);
 void	ft_rrr(t_stack *a, t_stack *b);
-void	ft_rev_rotate(t_stack *ab);
+void	ft_rev_rotate(t_stack **ab);
 
 #endif
