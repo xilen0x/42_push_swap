@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+/* -------------------------------- REVERSE ROTATE --------------------------------*/
 /*Funcion q realiza los movimientos para rra o rrb o rrr*/
 
 void	ft_rev_rotate(t_stack **ab)

@@ -13,6 +13,38 @@ t_stack	*ft_get_last_node(t_stack *stack)
 	return (stack);
 }
 
+int	ft_find_max(t_stack *stack)
+{
+	int	max;
+
+	max = stack->num;
+	if (stack)
+	{
+		while (stack->next)
+		{
+			if (stack->next->num > max)
+				max = stack->next->num;
+		}
+	}
+	return (max);
+}
+
+int	ft_find_min(t_stack *stack)
+{
+	int	min;
+
+	min = stack->num;
+	if (stack)
+	{
+		while (stack->next)
+		{
+			if (stack->next->num < min)
+				min = stack->next->num;
+		}
+	}
+	return (min);
+}
+
 t_stack	*ft_newnode(int num)
 {
 	t_stack	*node;

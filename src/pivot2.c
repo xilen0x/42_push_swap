@@ -14,37 +14,29 @@
 
 void	ft_order_3(t_stack *a, t_stack *b)
 {
+	int max;
 	int	min;
 
-	if (ft_is_ordered(a))
+	max = ft_find_max(a);
+	min = ft_find_min(a);
+	if (a->num > a->next->num && !max) // caso 2 1 3
+		ft_sa(a, b);
+	else if ((a->next->num == max) && (a->num == min)) //caso 1 3 2
 	{
-		printf("\nLista ya ordenada!\n");
-		ft_printstack(a, b);
-		return ;
-	}
-	else
-	{
-		min = a->num;
-		if ((a->next->num) < min)
-		{
-			ft_sa(a, b);
-			if (ft_is_ordered(a))
-			{
-				printf("\nLista ya ordenada!\n");
-				ft_printstack(a, b);
-				return ;
-			}
-			else
-			{
-				ft_rra(&a);
-				ft_printstack(a, b);
-				return ;
-			}
-		}
-		else
-			ft_rra(&a);
+		ft_sa(a, b);//3 1 2
+		ft_ra(a);
 		ft_printstack(a, b);
 	}
+	else if (a->num == max && a->next->num == min) // caso 3 1 2
+		ft_ra(a);
+	else if (a->num == max && a->next->next->num == min) // caso 3 2 1
+	{
+		ft_sa(a, b);//2 3 1
+		ft_rra(&a);
+	}
+	else //caso 2 3 1
+		ft_rra(&a);
+	ft_printstack(a, b);
 }
 
 void	ft_order_3_5(t_stack *a, t_stack *b)

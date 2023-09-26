@@ -20,7 +20,17 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 	}
 	else if (ac <= 3)
 	{
-		ft_order_3(a, b);
+		if (ft_is_ordered(a))
+		{
+			printf("\nLista ya ordenada!\n");
+			return ;
+		}
+		else
+		{
+			ft_order_3(a, b);
+			printf("********* DESPUES DE *********\n");
+			ft_printstack(a, b);
+		}
 	}
 	else if (ac < 6)
 	{
