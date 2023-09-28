@@ -15,8 +15,11 @@
 void	ft_pivot(t_stack *a, t_stack *b, int ac)
 {
 	if (ac == 2)
+	{
 		ft_sa(a);
-	else if (ac >= 3)
+		ft_printstack(a);
+	}
+	else if (ac == 3)
 	{
 		if (ft_is_ordered(a))
 		{
@@ -26,7 +29,6 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 		else
 		{
 			ft_order_3(a);
-			printf("********* DESPUES DE *********\n");
 			//ft_printstack(a);
 		}
 	}
