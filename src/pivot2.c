@@ -48,10 +48,10 @@ void	ft_order_3(t_stack *a)
 	}
 }
 
-void	ft_order_3_5(t_stack *a, t_stack *b)
+void	ft_order_4_5(t_stack *a, t_stack *b)
 {
-	b = 0;//momentaneamente
-	printf("********* ANTES DE *********\n");
+	int	min;
+
 	ft_printstack(a);
 	if (ft_is_ordered(a))
 	{
@@ -60,9 +60,18 @@ void	ft_order_3_5(t_stack *a, t_stack *b)
 	}
 	else
 	{
+		if (ft_lst_size(a) == 4)
+		{
+			//min = ft_find_min(a);
+			ft_order_3(t_stack *a);//**************aki voy
+			ft_pb(a, b);
+		}
+		else if (ft_lst_size(a) == 5)
+		{
+
+		}
 		//ft_rotate(a);
 		//ft_rra(&a);
-		
 		printf("********* DESPUES DE *********\n");
 		ft_printstack(a);
 	}

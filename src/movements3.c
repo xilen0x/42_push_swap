@@ -26,7 +26,7 @@ void	ft_pa(t_stack *a, t_stack *b)
 		temp->next = a;
 		a = temp;
 		printf("pa\n");
-		ft_printstack(a, b);
+		ft_printstack(a);
 	}
 }
 
@@ -43,7 +43,7 @@ void	ft_pb(t_stack *a, t_stack *b)
 		temp->next = b;
 		b = temp;
 		printf("pb\n");
-		ft_printstack(a, b);
+		ft_printstack(a);
 	}
 }
 

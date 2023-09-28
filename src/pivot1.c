@@ -27,13 +27,10 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 			return ;
 		}
 		else
-		{
 			ft_order_3(a);
-			//ft_printstack(a);
-		}
 	}
 	else if (ac < 6)
-		ft_order_3_5(a, b);
+		ft_order_4_5(a, b);
 	else
 		ft_order_more_5(a, b);
 }
