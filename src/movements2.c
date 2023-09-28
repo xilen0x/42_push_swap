@@ -17,26 +17,24 @@ void	ft_rotate(t_stack *ab)
 	t_stack	*temp;
 	t_stack	*lastnode;
 
-	temp = (ab)->next;
+	temp = ab;
 	lastnode = ft_get_last_node(ab);
-	lastnode->next = (ab);
-	(ab)->next = NULL;
-	(ab) = temp;
+	ft_stack_add_back(&ab, temp);
+	lastnode->next = NULL;
+	//ab = temp;**********************AKI VOY ->ERROR EN ./push_swap 1 3 2
 }
 
-/*ra : rotate a - desplaza hacia arriba todos los elementos del stack 'a' una posición,
-de forma que el primer elemento se convierte en el último.*/
-void	ft_ra(t_stack *a)
+/*ra : rotate a - el primer elemento se convierte en el último.*/
+void	ft_ra(t_stack **a)
 {
-	if (ft_lst_size(a) > 1)
+	if (ft_lst_size(*a) > 1)
 	{
-		ft_rotate(a);
+		ft_rotate(*a);
 		printf("ra\n");
 	}
 }
 
-/*rb : rotate b - desplaza hacia arriba todos los elementos del stack b una posición,
-de forma que el primer elemento se convierte en el último.*/
+/*rb : rotate b - el primer elemento se convierte en el último.*/
 
 void	ft_rb(t_stack *b)
 {
@@ -47,8 +45,7 @@ void	ft_rb(t_stack *b)
 	}
 }
 
-/*rr : rotate a y rotate b - Desplaza al mismo tiempo todos los elementos del stack a y del stack b una posición hacia arriba, 
-de forma que el primer elemento se convierte en el último.*/
+/*rr : rotate a y rotate b a la vez.*/
 void	ft_rr(t_stack *a, t_stack *b)
 {
 	if (a && b)

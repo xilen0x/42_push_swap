@@ -47,19 +47,19 @@ t_stack	*ft_newnode(int num);
 void	ft_stack_add_back(t_stack **stack, t_stack *newnode);
 //void	ft_stack_add_front(t_stack **stack, t_stack *newnode);
 t_stack	*ft_get_last_node(t_stack *stack);
-void	ft_printstack(t_stack *a, t_stack *b);
+void	ft_printstack(t_stack *stack);
 int		ft_lst_size(t_stack *stack);
-int	ft_find_max(t_stack *stack);
-int	ft_find_min(t_stack *stack);
+int		ft_find_max(t_stack *stack);
+int		ft_find_min(t_stack *stack);
 
 // ------------------------ Pivots ------------------------ //
 void	ft_pivot(t_stack *a, t_stack *b, int ac);
-void	ft_order_3(t_stack *a, t_stack *b);
+void	ft_order_3(t_stack *a);
 void	ft_order_3_5(t_stack *a, t_stack *b);
 void	ft_order_more_5(t_stack *a, t_stack *b);
 
 // ------------------------ Movements --------------------- //
-void	ft_sa(t_stack *a, t_stack *b);
+void	ft_sa(t_stack *a);
 void	ft_sb(t_stack *a, t_stack *b);
 void	ft_ss(t_stack *a, t_stack *b);
 void	ft_swap(t_stack *ab);
@@ -67,7 +67,7 @@ void	ft_swap(t_stack *ab);
 void	ft_pa(t_stack *a, t_stack *b);
 void	ft_pb(t_stack *a, t_stack *b);
 
-void	ft_ra(t_stack *a);
+void	ft_ra(t_stack **a);
 void	ft_rb(t_stack *b);
 void	ft_rr(t_stack *a, t_stack *b);
 void	ft_rotate(t_stack *ab);

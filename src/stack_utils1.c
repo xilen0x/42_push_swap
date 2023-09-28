@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils1.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: castorga <castorga@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/26 17:22:33 by castorga          #+#    #+#             */
+/*   Updated: 2023/09/26 17:22:40 by castorga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
@@ -11,38 +22,6 @@ t_stack	*ft_get_last_node(t_stack *stack)
 		}
 	}
 	return (stack);
-}
-
-int	ft_find_max(t_stack *stack)
-{
-	int	max;
-
-	max = stack->num;
-	if (stack)
-	{
-		while (stack->next)
-		{
-			if (stack->next->num > max)
-				max = stack->next->num;
-		}
-	}
-	return (max);
-}
-
-int	ft_find_min(t_stack *stack)
-{
-	int	min;
-
-	min = stack->num;
-	if (stack)
-	{
-		while (stack->next)
-		{
-			if (stack->next->num < min)
-				min = stack->next->num;
-		}
-	}
-	return (min);
 }
 
 t_stack	*ft_newnode(int num)
@@ -110,20 +89,4 @@ t_stack	*ft_init_list(char **av)
 		i++;
 	}
 	return (stack);
-}
-
-void	ft_printstack(t_stack *a, t_stack *b)
-{
-	printf("\n------STACK A------\n");
-	while (a != NULL)
-	{
-		printf("%i\n", a->num);
-		a = a->next;
-	}
-	printf("\n------STACK B------\n");
-	while (b != NULL)
-	{
-		printf("%i\n", b->num);
-		b = b->next;
-	}
 }
