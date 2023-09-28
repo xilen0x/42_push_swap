@@ -15,10 +15,8 @@
 void	ft_pivot(t_stack *a, t_stack *b, int ac)
 {
 	if (ac == 2)
-	{
 		ft_sa(a);
-	}
-	else if (ac == 3)
+	else if (ac >= 3)
 	{
 		if (ft_is_ordered(a))
 		{
@@ -33,11 +31,7 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 		}
 	}
 	else if (ac < 6)
-	{
 		ft_order_3_5(a, b);
-	}
 	else
-	{
 		ft_order_more_5(a, b);
-	}
 }

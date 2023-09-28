@@ -12,16 +12,19 @@
 
 #include "../include/push_swap.h"
 /* -------------------------------- ROTATE --------------------------------*/
-void	ft_rotate(t_stack *ab)
+void	ft_rotate(t_stack **ab)
 {
 	t_stack	*temp;
 	t_stack	*lastnode;
 
-	temp = ab;
-	lastnode = ft_get_last_node(ab);
-	ft_stack_add_back(&ab, temp);
+	lastnode = *ab;
+	temp = (*ab)->next;
+
+	while ((*ab)->next != NULL)
+		*ab = (*ab)->next;
 	lastnode->next = NULL;
-	//ab = temp;**********************AKI VOY ->ERROR EN ./push_swap 1 3 2
+	(*ab)->next = lastnode;
+	(*ab) = temp;
 }
 
 /*ra : rotate a - el primer elemento se convierte en el último.*/
@@ -29,7 +32,7 @@ void	ft_ra(t_stack **a)
 {
 	if (ft_lst_size(*a) > 1)
 	{
-		ft_rotate(*a);
+		ft_rotate(a);
 		printf("ra\n");
 	}
 }
@@ -40,7 +43,7 @@ void	ft_rb(t_stack *b)
 {
 	if (ft_lst_size(b) > 1)
 	{
-		ft_rotate(b);
+		ft_rotate(&b);
 		printf("rb\n");
 	}
 }
@@ -52,11 +55,11 @@ void	ft_rr(t_stack *a, t_stack *b)
 	{
 		if (ft_lst_size(a) > 1)
 		{
-			ft_rotate(a);
+			ft_rotate(&a);
 		}
 		if (ft_lst_size(b) > 1)
 		{
-			ft_rotate(b);
+			ft_rotate(&b);
 		}
 		printf("rr\n");
 	}
