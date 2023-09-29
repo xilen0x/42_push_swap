@@ -12,17 +12,6 @@
 
 #include "../include/push_swap.h"
 
-int	push_swap(int ac, char *av[])
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	stack_a = ft_init_list(av);
-	stack_b = NULL;
-	ft_pivot(stack_a, stack_b, ac);
-	return (0);
-}
-
 int	ft_is_ordered(t_stack *n)
 {
 	// Si la lista está vacía o tiene un solo elemento: ya está ordenada.
@@ -38,3 +27,21 @@ int	ft_is_ordered(t_stack *n)
 	}
 	return (1);
 }
+
+int	push_swap(int ac, char *av[])
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = ft_init_list(av);
+	stack_b = NULL;
+	if (ft_is_ordered(stack_a))
+	{
+		printf("\nLista ya ordenada**!\n");
+		return (0);
+	}
+	else
+		ft_pivot(stack_a, stack_b, ac);
+	return (0);
+}
+

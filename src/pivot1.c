@@ -17,20 +17,21 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 	if (ac == 2)
 	{
 		ft_sa(a);
-		ft_printstack(a);
+		ft_printstack(a, "AC2\n");
 	}
 	else if (ac == 3)
 	{
-		if (ft_is_ordered(a))
-		{
-			printf("\nLista ya ordenada!\n");
-			return ;
-		}
-		else
-			ft_order_3(a);
+		ft_order_3(&a);
+		ft_printstack(a, "AC3\n");
 	}
-	else if (ac < 6)
-		ft_order_4_5(a, b);
+	else if (ac == 4)
+	{
+		ft_order_4(a, b);
+		ft_printstack(a, "AC4\n");
+	}
 	else
+	{
 		ft_order_more_5(a, b);
+		ft_printstack(a, "AC5\n");
+	}
 }

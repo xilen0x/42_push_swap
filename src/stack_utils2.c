@@ -50,9 +50,10 @@ int	ft_find_min(t_stack *stack)
 	return (min);
 }
 
-void	ft_printstack(t_stack *stack)
+void	ft_printstack(t_stack *stack, char *str)
 {
 	printf("\n------ STACK ------\n");
+	printf("%s\n", str);
 	while (stack != NULL)
 	{
 		printf("%i\n", stack->num);

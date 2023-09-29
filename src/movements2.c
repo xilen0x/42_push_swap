@@ -39,11 +39,11 @@ void	ft_ra(t_stack **a)
 
 /*rb : rotate b - el primer elemento se convierte en el último.*/
 
-void	ft_rb(t_stack *b)
+void	ft_rb(t_stack **b)
 {
-	if (ft_lst_size(b) > 1)
+	if (ft_lst_size(*b) > 1)
 	{
-		ft_rotate(&b);
+		ft_rotate(b);
 		printf("rb\n");
 	}
 }
