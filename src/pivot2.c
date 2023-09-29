@@ -45,7 +45,23 @@ void	ft_order_3(t_stack **a)
 
 void	ft_order_4(t_stack **a, t_stack **b)
 {
-	ft_pb(a, b);
+	int	min;
+	//encontrar valor min
+	min = ft_find_min(a);
+	//ver la forma de enviarlo a B
+	if ((*a)->num == min)
+	{
+		ft_pb(a, b);
+		ft_printstack(*a, "A: luego de pb");
+		ft_printstack(*b, "B: luego de pb");
+		ft_order_3(a);
+		ft_printstack(*a, "A: luego de order3");
+		ft_printstack(*b, "B: luego de order3");
+		ft_pa(a, b);
+	}
+	
+
+	/*ft_pb(a, b);
 	ft_printstack(*a, "A: luego de pb");
 	ft_printstack(*b, "B: luego de pb");
 	ft_order_3(a);
@@ -53,7 +69,7 @@ void	ft_order_4(t_stack **a, t_stack **b)
 	ft_printstack(*b, "B: luego de order3");
 	ft_pa(a, b);
 	ft_printstack(*a, "A: luego de pa");
-	ft_printstack(*b, "B: luego de pa");
+	ft_printstack(*b, "B: luego de pa");*/
 	/*if (a->num > a->next->num)
 	{
 		ft_ra(&a);
