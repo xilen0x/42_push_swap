@@ -81,18 +81,29 @@ void	ft_order_4(t_stack **a, t_stack **b)
 
 void	ft_order_5(t_stack **a, t_stack **b)
 {
+	(void)b;
+	//encontrar min
 	int	min;
 
 	min = ft_find_min(*a);
-	printf("min: %d\n", min);
-	if ((*a)->num == min)//caso 1er valor sea el min....hasta aki esta ok!..falta checkear los demas casos
-	{
-		ft_pb(a, b);
-		ft_order_4(a, b);
-		ft_pa(a, b);
-	}
-}
+	//llevar arriba los 2 mas pequenos // AKI VOYYYYYYYY************
 
+	//enviarlos a B(1ro el mas peq. y luego el otro)
+	
+	//llamar a ft_order_3
+	
+	//traer de vuelta valores en B
+}
+/*
+nota1 para mi yo del futuro:
+En lugar de hacer este tipo de comparaciones((*a)->next->next->next->...etc->num)
+Se puede realizar un while
+algo asi:
+while
+	(*a)->next > max (algo asi)
+
+Nota2: casos 4 y 5 se podrian realizar en una sola funcion...dale la vuelta
+*/
 void	ft_order_more_5(t_stack *a, t_stack *b)
 {
 	(void)b;
