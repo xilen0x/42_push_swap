@@ -54,8 +54,6 @@ void	ft_order_4(t_stack **a, t_stack **b)
 		ft_pb(a, b);
 		ft_order_3(a);
 		ft_pa(a, b);
-		ft_printstack(*a, "A:");
-		ft_printstack(*b, "B:");
 	}
 	else if ((*a)->next->num == min)//caso 2do valor sea el min
 	{
@@ -63,12 +61,17 @@ void	ft_order_4(t_stack **a, t_stack **b)
 		ft_pb(a, b);
 		ft_order_3(a);
 		ft_pa(a, b);
-		ft_printstack(*a, "A:");
-		ft_printstack(*b, "B:");
 	}
 	else if ((*a)->next->next->num == min)//caso 3er valor sea el min
 	{
 		ft_rra(a);
+		ft_rra(a);
+		ft_pb(a, b);
+		ft_order_3(a);
+		ft_pa(a, b);
+	}
+	else//caso 4to valor sea el min
+	{
 		ft_rra(a);
 		ft_pb(a, b);
 		ft_order_3(a);
