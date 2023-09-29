@@ -79,13 +79,19 @@ void	ft_order_4(t_stack **a, t_stack **b)
 	}
 }
 
+void	ft_order_5(t_stack **a, t_stack **b)
+{
+	int	min;
 
-		/*else if (ft_lst_size(a) == 5)
-		{
-			//ft_rotate(a);
-			//ft_rra(&a);
-		}
-		ft_printstack(a);*/
+	min = ft_find_min(*a);
+	printf("min: %d\n", min);
+	if ((*a)->num == min)//caso 1er valor sea el min....hasta aki esta ok!..falta checkear los demas casos
+	{
+		ft_pb(a, b);
+		ft_order_4(a, b);
+		ft_pa(a, b);
+	}
+}
 
 void	ft_order_more_5(t_stack *a, t_stack *b)
 {
