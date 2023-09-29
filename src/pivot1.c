@@ -26,8 +26,9 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 	}
 	else if (ac == 4)
 	{
-		ft_order_4(a, b);
+		ft_order_4(&a, &b);
 		ft_printstack(a, "AC4\n");
+		ft_printstack(b, "BC4\n");
 	}
 	else
 	{

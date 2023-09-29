@@ -22,54 +22,46 @@ void	ft_order_3(t_stack **a)
 	if (((*a)->num > (*a)->next->num) && ((*a)->next->next->num > (*a)->num)) // caso 2 1 3
 	{
 		ft_sa(*a);
-		ft_printstack(*a, "");
 	}
 	else if (((*a)->next->num > (*a)->num) && ((*a)->num < (*a)->next->next->num)) //caso 1 3 2
 	{
 		ft_sa(*a);//3 1 2
 		ft_ra(a);
-		ft_printstack(*a, "");
 	}
 	else if ((*a)->num == max && (*a)->next->num == min) // caso 3 1 2
 	{
 		ft_ra(a);
-		ft_printstack(*a, "");
 	}
 	else if ((*a)->num == max && (*a)->next->next->num == min) // caso 3 2 1
 	{
 		ft_sa(*a);//2 3 1
 		ft_rra(a);
-		ft_printstack(*a, "");
 	} 
 	else //caso 2 3 1
 	{
 		ft_rra(a);
-		ft_printstack(*a, "");
 	}
 }
 
-void	ft_order_4(t_stack *a, t_stack *b)
+void	ft_order_4(t_stack **a, t_stack **b)
 {
-	int	min;
-	//(void)b;
-
-	ft_printstack(a, "");
-	min = ft_find_min(a);
-	if (ft_lst_size(a) == 4)
+	ft_pb(a, b);
+	ft_printstack(*a, "A: luego de pb");
+	ft_printstack(*b, "B: luego de pb");
+	ft_order_3(a);
+	ft_printstack(*a, "A: luego de order3");
+	ft_printstack(*b, "B: luego de order3");
+	ft_pa(a, b);
+	ft_printstack(*a, "A: luego de pa");
+	ft_printstack(*b, "B: luego de pa");
+	/*if (a->num > a->next->num)
 	{
-		ft_pb(&a, &b);
-		ft_is_ordered(a);
-		ft_order_3(&a);
-		ft_is_ordered(a);
-		ft_pa(&a, &b);
-		if (a->num > a->next->num)
-		{
-			ft_ra(&a);
-			ft_printstack(a, "");
-		}
+		ft_ra(&a);
 		ft_printstack(a, "");
-	}
+	}*/
+	//ft_printstack(a, "");
 }
+
 
 		/*else if (ft_lst_size(a) == 5)
 		{
