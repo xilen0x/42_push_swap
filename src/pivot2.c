@@ -46,36 +46,34 @@ void	ft_order_3(t_stack **a)
 void	ft_order_4(t_stack **a, t_stack **b)
 {
 	int	min;
-	//encontrar valor min
-	min = ft_find_min(a);
-	//ver la forma de enviarlo a B
-	if ((*a)->num == min)
+
+	min = ft_find_min(*a);
+	printf("min: %d\n", min);
+	if ((*a)->num == min)//caso 1er valor sea el min
 	{
 		ft_pb(a, b);
-		ft_printstack(*a, "A: luego de pb");
-		ft_printstack(*b, "B: luego de pb");
 		ft_order_3(a);
-		ft_printstack(*a, "A: luego de order3");
-		ft_printstack(*b, "B: luego de order3");
+		ft_pa(a, b);
+		ft_printstack(*a, "A:");
+		ft_printstack(*b, "B:");
+	}
+	else if ((*a)->next->num == min)//caso 2do valor sea el min
+	{
+		ft_sa(*a);
+		ft_pb(a, b);
+		ft_order_3(a);
+		ft_pa(a, b);
+		ft_printstack(*a, "A:");
+		ft_printstack(*b, "B:");
+	}
+	else if ((*a)->next->next->num == min)//caso 3er valor sea el min
+	{
+		ft_rra(a);
+		ft_rra(a);
+		ft_pb(a, b);
+		ft_order_3(a);
 		ft_pa(a, b);
 	}
-	
-
-	/*ft_pb(a, b);
-	ft_printstack(*a, "A: luego de pb");
-	ft_printstack(*b, "B: luego de pb");
-	ft_order_3(a);
-	ft_printstack(*a, "A: luego de order3");
-	ft_printstack(*b, "B: luego de order3");
-	ft_pa(a, b);
-	ft_printstack(*a, "A: luego de pa");
-	ft_printstack(*b, "B: luego de pa");*/
-	/*if (a->num > a->next->num)
-	{
-		ft_ra(&a);
-		ft_printstack(a, "");
-	}*/
-	//ft_printstack(a, "");
 }
 
 
