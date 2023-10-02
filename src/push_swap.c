@@ -17,7 +17,6 @@ int	ft_is_ordered(t_stack *n)
 	// Si la lista está vacía o tiene un solo elemento: ya está ordenada.
 	if (n == NULL || n->next == NULL)
 		return (1);
-	// Comprobacion si la lista está ordenada ascendentemente.
 	while (n->next != NULL)
 	{
 		// Si se encuentra un elemento mayor que el siguiente, la lista no está ordenada.

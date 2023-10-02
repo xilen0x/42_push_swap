@@ -51,6 +51,7 @@ void	ft_printstack(t_stack *stack, char *str);
 int		ft_lst_size(t_stack *stack);
 int		ft_find_max(t_stack *stack);
 int		ft_find_min(t_stack *stack);
+int		ft_find_second_min(t_stack *head, int first_min);
 
 // ------------------------ Pivots ------------------------ //
 void	ft_pivot(t_stack *a, t_stack *b, int ac);

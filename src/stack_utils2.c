@@ -37,9 +37,10 @@ int	ft_find_min(t_stack *stack)
 	t_stack	*ptr;
 
 	ptr = stack;
-	min = ptr->num;
+	min = 0;
 	if (ptr)
 	{
+		min = ptr->num;
 		while (ptr->next)
 		{
 			if (ptr->next->num < min)
@@ -48,6 +49,25 @@ int	ft_find_min(t_stack *stack)
 		}
 	}
 	return (min);
+}
+
+int	ft_find_second_min(t_stack *head, int first_min)
+{
+	int		second_min;
+	t_stack	*current;
+
+	second_min = INT_MAX;
+	current = head;
+
+	while (current != NULL)
+	{
+		if (current->num < second_min && current->num != first_min)
+		{
+			second_min = current->num;
+		}
+		current = current->next;
+	}
+	return (second_min);
 }
 
 void	ft_printstack(t_stack *stack, char *str)

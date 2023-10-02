@@ -36,64 +36,94 @@ void	ft_order_3(t_stack **a)
 	{
 		ft_sa(*a);//2 3 1
 		ft_rra(a);
-	} 
+	}
 	else //caso 2 3 1
 	{
 		ft_rra(a);
 	}
 }
 
+void	ft_pb_order3_pa(t_stack **a, t_stack **b)
+{
+	ft_pb(a, b);
+	ft_order_3(a);
+	ft_pa(a, b);
+}
+
+void	ft_pb_order4_pa(t_stack **a, t_stack **b)
+{
+	ft_pb(a, b);
+	ft_order_4(a, b);
+	ft_pa(a, b);
+}
+
 void	ft_order_4(t_stack **a, t_stack **b)
 {
 	int	min;
 
+	if (ft_is_ordered(*a))
+		return ;
 	min = ft_find_min(*a);
-	printf("min: %d\n", min);
 	if ((*a)->num == min)//caso 1er valor sea el min
-	{
-		ft_pb(a, b);
-		ft_order_3(a);
-		ft_pa(a, b);
-	}
+		ft_pb_order3_pa(a, b);
 	else if ((*a)->next->num == min)//caso 2do valor sea el min
 	{
 		ft_sa(*a);
-		ft_pb(a, b);
-		ft_order_3(a);
-		ft_pa(a, b);
+		ft_pb_order3_pa(a, b);
 	}
 	else if ((*a)->next->next->num == min)//caso 3er valor sea el min
 	{
 		ft_rra(a);
 		ft_rra(a);
-		ft_pb(a, b);
-		ft_order_3(a);
-		ft_pa(a, b);
+		ft_pb_order3_pa(a, b);
 	}
 	else//caso 4to valor sea el min
 	{
 		ft_rra(a);
-		ft_pb(a, b);
-		ft_order_3(a);
-		ft_pa(a, b);
+		ft_pb_order3_pa(a, b);
 	}
 }
 
 void	ft_order_5(t_stack **a, t_stack **b)
 {
-	(void)b;
-	//encontrar min
 	int	min;
 
 	min = ft_find_min(*a);
-	//llevar arriba los 2 mas pequenos // AKI VOYYYYYYYY************
-
-	//enviarlos a B(1ro el mas peq. y luego el otro)
-	
-	//llamar a ft_order_3
-	
-	//traer de vuelta valores en B
+	if ((*a)->num == min)//caso 1er valor sea el min
+		ft_pb_order4_pa(a, b);
+	else if ((*a)->next->num == min)//caso 2do valor sea el min
+	{
+		ft_sa(*a);
+		ft_pb_order4_pa(a, b);
+	}
+	else if ((*a)->next->next->num == min)//caso 3er valor sea el min
+	{
+		ft_ra(a);
+		ft_sa(*a);
+		ft_pb_order4_pa(a, b);
+	}
+	else//caso 4to o 5to valor es el min
+	{
+		ft_rra(a);
+		if (ft_is_ordered(*a))
+			return ;
+		else
+			ft_rra(a);
+		if (ft_is_ordered(*a))
+			return ;
+		else
+			ft_order_5(a, b);
+	}
 }
+
+void	ft_order_more_5(t_stack *a, t_stack *b)
+{
+	(void)a;
+	(void)b;
+	printf("do something!\n");
+}
+
+
 /*
 nota1 para mi yo del futuro:
 En lugar de hacer este tipo de comparaciones((*a)->next->next->next->...etc->num)
@@ -104,11 +134,3 @@ while
 
 Nota2: casos 4 y 5 se podrian realizar en una sola funcion...dale la vuelta
 */
-void	ft_order_more_5(t_stack *a, t_stack *b)
-{
-	(void)b;
-	ft_printstack(a, "");
-	{
-		printf("\nDo something!\n");
-	}
-}
