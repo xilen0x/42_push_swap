@@ -70,7 +70,7 @@ int	ft_find_second_min(t_stack *head, int first_min)
 	return (second_min);
 }
 
-void	ft_printstack(t_stack *stack, char *str)
+void	ft_printstack(t_stack *stack, char *str)//comentar funcion luego
 {
 	printf("\n------ STACK ------\n");
 	printf("%s\n", str);

@@ -35,4 +35,8 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 		ft_order_5(&a, &b);
 		ft_printstack(a, "AC5\n");
 	}
+	else
+	{
+		ft_order_more_5(a, b);
+	}
 }

@@ -28,7 +28,7 @@ void	ft_sa(t_stack *a)
 	if (ft_lst_size(a) > 1)
 	{
 		ft_swap(a);
-		printf("sa\n");
+		write (1, "sa\n", 3);
 	}
 }
 
@@ -39,7 +39,7 @@ void	ft_sb(t_stack *a, t_stack *b)
 	if (ft_lst_size(b) > 1)
 	{
 		ft_swap(b);
-		printf("sb\n");
+		write (1, "sb\n", 3);
 	}
 }
 
@@ -55,6 +55,6 @@ void	ft_ss(t_stack *a, t_stack *b)
 		{
 			ft_swap(b);
 		}
-		printf("ss\n");
+		write (1, "ss\n", 3);
 	}
 }

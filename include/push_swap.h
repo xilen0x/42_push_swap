@@ -59,9 +59,9 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac);
 void	ft_order_3(t_stack **a);
 void	ft_order_4(t_stack **a, t_stack **b);
 void	ft_order_5(t_stack **a, t_stack **b);
-void	ft_order_more_5(t_stack *a, t_stack *b);
 void	ft_order_min_in_4_5(t_stack **a, t_stack **b);
 void	ft_pb_order4_pa(t_stack **a, t_stack **b);
+void	ft_order_more_5(t_stack *a, t_stack *b);
 
 // ------------------------ Movements --------------------- //
 void	ft_sa(t_stack *a);

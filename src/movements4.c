@@ -42,7 +42,7 @@ void	ft_rra(t_stack **a)
 	if (ft_lst_size(*a) > 1)
 	{
 		ft_rev_rotate(a);
-		printf("rra\n");
+		write (1, "rra\n", 4);
 	}
 }
 
@@ -55,7 +55,7 @@ void	ft_rrb(t_stack **b)
 	if (ft_lst_size(*b) > 1)
 	{
 		ft_rev_rotate(b);
-		printf("rrb\n");
+		write (1, "rrb\n", 4);
 	}
 }
 
@@ -74,6 +74,6 @@ void	ft_rrr(t_stack *a, t_stack *b)
 		{
 			ft_rev_rotate(&b);
 		}
-		printf("rrr\n");
+		write (1, "rrr\n", 4);
 	}
 }

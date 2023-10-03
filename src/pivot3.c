@@ -48,10 +48,3 @@ void	ft_order_5(t_stack **a, t_stack **b)
 		ft_order_min_in_4_5(a, b);
 	}
 }
-
-void	ft_order_more_5(t_stack *a, t_stack *b)
-{
-	(void)a;
-	(void)b;
-	printf("do something!\n");
-}
