@@ -50,23 +50,11 @@ https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0
 
 int	main(int ac, char *av[])
 {
-	char	**split_result;
-	int		i;
-
 	if (ac > 1)
 	{
 		if (ac == 2)
 		{
-			split_result = ft_split(av[1], ' ');
-			i = 0;
-			while (split_result[i])
-				i++;
-			if (i > 1)
-			{
-				if (ft_check_argv_are_valid(ac, split_result))
-					return (1);
-				push_swap(i, split_result);
-			}
+			ft_prev_split(ac, av);
 			return (0);
 		}
 		else

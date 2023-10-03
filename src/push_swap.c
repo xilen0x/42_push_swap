@@ -27,6 +27,24 @@ int	ft_is_ordered(t_stack *n)
 	return (1);
 }
 
+int	ft_prev_split(int ac, char *av[])
+{
+	char	**split_result;
+	int		i;
+
+	split_result = ft_split(av[1], ' ');
+	i = 0;
+	while (split_result[i])
+		i++;
+	if (i > 1)
+	{
+		if (ft_check_argv_are_valid(ac, split_result))
+			return (1);
+		push_swap(i, split_result);
+	}
+	return (0);
+}
+
 int	push_swap(int ac, char *av[])
 {
 	t_stack	*stack_a;
@@ -36,7 +54,7 @@ int	push_swap(int ac, char *av[])
 	stack_b = NULL;
 	if (ft_is_ordered(stack_a))
 	{
-		printf("\nLista ya ordenada**!\n");
+		write(1, "\nLista ya ordenada!\n", 20);
 		return (0);
 	}
 	else

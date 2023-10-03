@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-/* -------------------------------- REVERSE ROTATE --------------------------------*/
-/*Funcion q realiza los movimientos para rra o rrb o rrr*/
 
+/* --------------------------- REVERSE ROTATE -------------------------------*/
+
+/*Funcion q realiza los movimientos para rra o rrb o rrr*/
 void	ft_rev_rotate(t_stack **ab)
 {
 	t_stack	*lastnode;
@@ -34,8 +35,7 @@ void	ft_rev_rotate(t_stack **ab)
 	}
 }
 
-/*rra : reverse rotate a
-Desplaza hacia abajo todos los elementos del stack a
+/*rra : reverse rotate a - Desplaza hacia abajo todos los elementos del stack 'a' 
 una posición, de forma que el último elemento se convierte en el primero.*/
 void	ft_rra(t_stack **a)
 {

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/push_swap.h"
+
 /* -------------------------------- SWAP --------------------------------*/
 void	ft_swap(t_stack *ab)
 {
@@ -22,9 +22,7 @@ void	ft_swap(t_stack *ab)
 	ab->next->num = temp;
 }
 
-/*
-sa : swap a - intercambia los dos primeros elementos encima del stack a.*/
-
+/*sa : swap a - intercambia los dos primeros elementos encima del stack a.*/
 void	ft_sa(t_stack *a)
 {
 	if (ft_lst_size(a) > 1)

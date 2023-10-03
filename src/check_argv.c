@@ -70,17 +70,17 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ft_check_digits(ac, av) == 1)
 	{
-		printf("error con digito\n");
+		write (1, "error con digito\n", 17);
 		return (1);
 	}
 	if (ft_check_range(ac, av) == 1)
 	{
-		printf("error con rango\n");
+		write (1, "error con rango\n", 16);
 		return (1);
 	}
 	if (ft_check_duplic(ac, av) == 1)
 	{
-		printf("error de duplicado\n");
+		write (1, "error de duplicado\n", 19);
 		return (1);
 	}
 	return (0);
