@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 
+/*funcion utilitaria utilizada en ft_order_5 */
 void	ft_order_min_in_4_5(t_stack **a, t_stack **b)
 {
 	ft_rra(a);
@@ -25,6 +26,15 @@ void	ft_order_min_in_4_5(t_stack **a, t_stack **b)
 		ft_order_5(a, b);
 }
 
+/*funcion utilitaria utilizada en ft_order_5 */
+void	ft_pb_order4_pa(t_stack **a, t_stack **b)
+{
+	ft_pb(a, b);
+	ft_order_4(a, b);
+	ft_pa(a, b);
+}
+
+/*funcion que ordena 5 valores*/
 void	ft_order_5(t_stack **a, t_stack **b)
 {
 	int	min;

@@ -64,12 +64,12 @@ int	ft_check_duplic(int ac, char *av[])
 	return (0);
 }
 
-
 /*------------------ CHECKS ------------------*/
 int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ft_check_digits(ac, av) == 1)
 	{
+		//write (1, "Error\n", 6);antes de entregar reemplazar con este write
 		write (1, "error con digito\n", 17);
 		return (1);
 	}

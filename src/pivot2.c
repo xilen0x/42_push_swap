@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 
+/*funcion que ordena 3 valores*/
 void	ft_order_3(t_stack **a)
 {
 	int	max;
@@ -37,6 +38,7 @@ void	ft_order_3(t_stack **a)
 		ft_rra(a);
 }
 
+/*funcion utilitaria utilizada en ft_order_4 */
 void	ft_pb_order3_pa(t_stack **a, t_stack **b)
 {
 	ft_pb(a, b);
@@ -44,13 +46,7 @@ void	ft_pb_order3_pa(t_stack **a, t_stack **b)
 	ft_pa(a, b);
 }
 
-void	ft_pb_order4_pa(t_stack **a, t_stack **b)
-{
-	ft_pb(a, b);
-	ft_order_4(a, b);
-	ft_pa(a, b);
-}
-
+/*funcion que ordena 4 valores*/
 void	ft_order_4(t_stack **a, t_stack **b)
 {
 	int	min;
@@ -77,6 +73,3 @@ void	ft_order_4(t_stack **a, t_stack **b)
 		ft_pb_order3_pa(a, b);
 	}
 }
-
-
-

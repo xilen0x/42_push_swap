@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 
+/*funcion que obtiene el ultimo nodo de una lista*/
 t_stack	*ft_get_last_node(t_stack *stack)
 {
 	if (stack)
@@ -24,6 +25,7 @@ t_stack	*ft_get_last_node(t_stack *stack)
 	return (stack);
 }
 
+/*funcion que crea un nuevo nodo*/
 t_stack	*ft_newnode(int num)
 {
 	t_stack	*node;
@@ -36,6 +38,7 @@ t_stack	*ft_newnode(int num)
 	return (node);
 }
 
+/*funcion que obtiene el tamaño de una lista*/
 int	ft_lst_size(t_stack *stack)
 {
 	int	len;
@@ -49,15 +52,7 @@ int	ft_lst_size(t_stack *stack)
 	return (len);
 }
 
-/*void	ft_stack_add_front(t_stack **stack, t_stack *newnode)
-{
-	if (stack != 0)
-	{
-		newnode->next = *stack;
-		*stack = newnode;
-	}
-}*/
-
+/*funcion que enlaza nodo al final de la lista*/
 void	ft_stack_add_back(t_stack **stack, t_stack *newnode)
 {
 	t_stack	*lastnode;
@@ -73,6 +68,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *newnode)
 	}
 }
 
+/*funcion que inicialista la lista creando el nodo(newnode) y agregandolo a la lista(ft_stack_add_back)*/
 t_stack	*ft_init_list(char **av)
 {
 	int		i;

@@ -13,6 +13,7 @@
 #include "../include/push_swap.h"
 
 /* -------------------------------- ROTATE --------------------------------*/
+/*Funcion que rota los nodos, utilizada en ft_ra, ft_rb y ft_rr*/
 void	ft_rotate(t_stack **ab)
 {
 	t_stack	*temp;
@@ -39,7 +40,6 @@ void	ft_ra(t_stack **a)
 }
 
 /*rb : rotate b - el primer elemento se convierte en el último.*/
-
 void	ft_rb(t_stack **b)
 {
 	if (ft_lst_size(*b) > 1)

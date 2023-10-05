@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 
+/*funcion que calcula el numero maximo*/
 int	ft_find_max(t_stack *stack)
 {
 	int		max;
@@ -31,6 +32,7 @@ int	ft_find_max(t_stack *stack)
 	return (max);
 }
 
+/*funcion que calcula el numero minimo*/
 int	ft_find_min(t_stack *stack)
 {
 	int		min;
@@ -51,7 +53,8 @@ int	ft_find_min(t_stack *stack)
 	return (min);
 }
 
-int	ft_find_second_min(t_stack *head, int first_min)
+/*funcion que calcula el segundo numero minimo*/
+/*int	ft_find_second_min(t_stack *head, int first_min)
 {
 	int		second_min;
 	t_stack	*current;
@@ -68,8 +71,9 @@ int	ft_find_second_min(t_stack *head, int first_min)
 		current = current->next;
 	}
 	return (second_min);
-}
+}*/
 
+/*funcion que imprime el stack*/
 void	ft_printstack(t_stack *stack, char *str)//comentar funcion luego
 {
 	printf("\n------ STACK ------\n");

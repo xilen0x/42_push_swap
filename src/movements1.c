@@ -43,6 +43,7 @@ void	ft_sb(t_stack *a, t_stack *b)
 	}
 }
 
+/*ss : swap a y swap b a la vez.*/
 void	ft_ss(t_stack *a, t_stack *b)
 {
 	if (a && b)

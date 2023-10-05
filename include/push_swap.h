@@ -17,9 +17,6 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-/*# include <string.h>
-# include <stdio.h>
-# include <errno.h>*/
 
 // ------------------------ Struct ------------------------ //
 typedef struct s_stack
@@ -27,6 +24,21 @@ typedef struct s_stack
 	int				num;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct moves
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+};
 
 
 // ------------------------ Utils -------------------------- //

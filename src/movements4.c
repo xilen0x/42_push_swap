@@ -35,8 +35,7 @@ void	ft_rev_rotate(t_stack **ab)
 	}
 }
 
-/*rra : reverse rotate a - Desplaza hacia abajo todos los elementos del stack 'a' 
-una posición, de forma que el último elemento se convierte en el primero.*/
+/*rra : reverse rotate A - El último elemento se convierte en el primero.*/
 void	ft_rra(t_stack **a)
 {
 	if (ft_lst_size(*a) > 1)
@@ -46,10 +45,7 @@ void	ft_rra(t_stack **a)
 	}
 }
 
-
-/*rrb : reverse rotate b
-Desplaza hacia abajo todos los elementos del stack b
-una posición, de forma que el último elemento se convierte en el primero.*/
+/*rrb : reverse rotate B - El último elemento se convierte en el primero.*/
 void	ft_rrb(t_stack **b)
 {
 	if (ft_lst_size(*b) > 1)
@@ -59,9 +55,7 @@ void	ft_rrb(t_stack **b)
 	}
 }
 
-/*rra : reverse rotate a  o  rrb : reverse rotate b
-Desplaza hacia abajo todos los elementos del stack a(b)
-una posición, de forma que el último elemento se convierte en el primero.*/
+/*rra y rrb a la vez. Los últimos elementos se convierten en los primeros.*/
 void	ft_rrr(t_stack *a, t_stack *b)
 {
 	if (a && b)

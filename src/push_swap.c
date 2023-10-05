@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 
+/*Funcion que verifica si la lista esta ordenada*/
 int	ft_is_ordered(t_stack *n)
 {
 	// Si la lista está vacía o tiene un solo elemento: ya está ordenada.
@@ -27,6 +28,7 @@ int	ft_is_ordered(t_stack *n)
 	return (1);
 }
 
+/*Funcion que llama a ft_split y check si nums son validos. Luego envia todo a push_swap*/
 int	ft_prev_split(int ac, char *av[])
 {
 	char	**split_result;
@@ -45,6 +47,8 @@ int	ft_prev_split(int ac, char *av[])
 	return (0);
 }
 
+/*Funcion que llama a ft_init_list para inicializar lista A
+y luego envia todo a ft_pivot */
 int	push_swap(int ac, char *av[])
 {
 	t_stack	*stack_a;
