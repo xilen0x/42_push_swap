@@ -13,7 +13,7 @@
 #include "../include/push_swap.h"
 
 /*funcion que ordena 3 valores*/
-void	ft_order_3(t_stack **a)
+/*void	ft_order_3(t_stack **a)
 {
 	int	max;
 	int	min;
@@ -22,7 +22,7 @@ void	ft_order_3(t_stack **a)
 	min = ft_find_min(*a);
 	if (((*a)->num > (*a)->next->num) && ((*a)->next->next->num > (*a)->num)) // caso 2 1 3
 		ft_sa(*a);
-	else if (((*a)->next->num > (*a)->num) && ((*a)->num < (*a)->next->next->num)) //caso 1 3 2
+	else if (((*a)->next->num > (*a)->num) && ((*a)->num < (*a)->next->next->num))
 	{
 		ft_sa(*a);//3 1 2
 		ft_ra(a);
@@ -36,6 +36,29 @@ void	ft_order_3(t_stack **a)
 	}
 	else //caso 2 3 1
 		ft_rra(a);
+}
+*/
+
+void	ft_order_3(t_stack **a)
+{
+	while (!ft_is_ordered(*a))
+	{
+		if ((*a)->num == ft_find_min(*a))
+		{
+			ft_rra(a);
+			ft_sa(*a);
+		}
+		else if ((*a)->num == ft_find_max(*a))
+		{
+			ft_ra(a);
+			if (!ft_is_ordered(*a))
+				ft_sa(*a);
+		}
+		else if ((*a)->next->num == ft_find_min(*a))
+			ft_sa(*a);	
+		else
+			ft_rra(a);
+	}
 }
 
 /*funcion utilitaria utilizada en ft_order_4 */

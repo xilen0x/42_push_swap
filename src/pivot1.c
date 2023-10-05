@@ -42,6 +42,5 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 	else
 	{
 		ft_order_more_5(a, b);
-		
 	}
 }

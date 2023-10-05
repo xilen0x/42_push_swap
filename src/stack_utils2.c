@@ -84,3 +84,18 @@ void	ft_printstack(t_stack *stack, char *str)//comentar funcion luego
 		stack = stack->next;
 	}
 }
+
+/*funcion que encuentra el indice del numero num*/
+int	ft_find_index(t_stack *a, int num)
+{
+	int		i;
+
+	i = 0;
+	while (a->num != num)
+	{
+		i++;
+		a = a->next;
+	}
+	a->index = 0;
+	return (i);
+}
