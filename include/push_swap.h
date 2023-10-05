@@ -18,14 +18,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// ------------------------ Struct ------------------------ //
+// ------------------------ Structs ------------------------ //
 typedef struct s_stack
 {
 	int				num;
 	struct s_stack	*next;
 }	t_stack;
 
-typedef struct moves
+struct	s_moves
 {
 	int	sa;
 	int	sb;

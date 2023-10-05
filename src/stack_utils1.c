@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+/*------------------------------ LISTA Y NODOS ------------------------------*/
 
 /*funcion que obtiene el ultimo nodo de una lista*/
 t_stack	*ft_get_last_node(t_stack *stack)

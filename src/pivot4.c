@@ -18,6 +18,8 @@ void	ft_order_more_5(t_stack *a, t_stack *b)
 	// step1: pasar 2 primeros a B (check si es min)
 	ft_pb(&a, &b);
 	ft_pb(&a, &b);
+	ft_printstack(a, "A_more5\n");
+	ft_printstack(b, "B_more5\n");
 	//step2: En B: llevar al max arriba(ordenar b)
 
 	//step3: pb (check si es min) si es moverlo al final(ordenar b)

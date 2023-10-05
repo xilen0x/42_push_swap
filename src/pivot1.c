@@ -42,7 +42,6 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 	else
 	{
 		ft_order_more_5(a, b);
-		ft_printstack(a, "A_more5\n");
-		ft_printstack(b, "B_more5\n");
+		
 	}
 }
