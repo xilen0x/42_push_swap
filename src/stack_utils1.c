@@ -69,7 +69,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *newnode)
 	}
 }
 
-/*funcion que inicialista la lista creando el nodo(newnode) y agregandolo a la lista(ft_stack_add_back)*/
+/*funcion que inicialista la lista creando un nodo(newnode) y agregandolo a la lista(ft_stack_add_back)*/
 t_stack	*ft_init_list(char **av)
 {
 	int		i;

@@ -33,12 +33,12 @@ void	ft_sa(t_stack *a)
 }
 
 /*sb : swap b - intercambia los dos primeros elementos encima del stack b.*/
-void	ft_sb(t_stack *a, t_stack *b)
+void	ft_sb(t_stack **a, t_stack **b)
 {
 	(void)a;
-	if (ft_lst_size(b) > 1)
+	if (ft_lst_size(*b) > 1)
 	{
-		ft_swap(b);
+		ft_swap(*b);
 		write (1, "sb\n", 3);
 	}
 }

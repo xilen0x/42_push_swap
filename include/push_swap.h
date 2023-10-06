@@ -23,7 +23,8 @@ typedef struct s_stack
 {
 	int				num;
 	struct s_stack	*next;
-	int				index;
+	//struct s_stack	*prev;
+	//int				index;
 }	t_stack;
 
 struct	s_moves
@@ -46,8 +47,10 @@ struct	s_moves
 int		push_swap(int ac, char *av[]);
 char	**ft_split(const char *s, char c);
 int		ft_is_ordered(t_stack *n);
+int		ft_is_inv_ordered(t_stack *n);
 int		ft_prev_split(int ac, char *av[]);
-int		ft_find_index(t_stack *a, int num);
+//int		ft_find_index(t_stack *a, int num);
+int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
 
 // ------------------------ Checks ------------------------ //
 int		ft_check_argv_are_valid(int ac, char *av[]);	
@@ -71,16 +74,15 @@ int		ft_find_min(t_stack *stack);
 // ------------------------ Pivots ------------------------ //
 void	ft_pivot(t_stack *a, t_stack *b, int ac);
 void	ft_order_3(t_stack **a);
-//void	ft_order_3(t_stack **a, t_stack **b);
 void	ft_order_4(t_stack **a, t_stack **b);
 void	ft_order_5(t_stack **a, t_stack **b);
 void	ft_order_min_in_4_5(t_stack **a, t_stack **b);
 void	ft_pb_order4_pa(t_stack **a, t_stack **b);
-void	ft_order_more_5(t_stack *a, t_stack *b);
+void	ft_order_more_5(t_stack **a, t_stack **b);
 
 // ------------------------ Movements --------------------- //
 void	ft_sa(t_stack *a);
-void	ft_sb(t_stack *a, t_stack *b);
+void	ft_sb(t_stack **a, t_stack **b);
 void	ft_ss(t_stack *a, t_stack *b);
 void	ft_swap(t_stack *ab);
 

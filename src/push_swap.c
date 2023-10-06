@@ -15,13 +15,29 @@
 /*Funcion que verifica si la lista esta ordenada*/
 int	ft_is_ordered(t_stack *n)
 {
-	// Si la lista está vacía o tiene un solo elemento: ya está ordenada.
+	// Si la lista está vacía o tiene un solo elemento: no hay nada que ordenar.
 	if (n == NULL || n->next == NULL)
 		return (1);
 	while (n->next != NULL)
 	{
 		// Si se encuentra un elemento mayor que el siguiente, la lista no está ordenada.
 		if (n->num > n->next->num)
+			return (0);
+		n = n->next;
+	}
+	return (1);
+}
+
+/*Funcion que verifica si la lista esta inversamente ordenada*/
+int	ft_is_inv_ordered(t_stack *n)
+{
+	// Si la lista está vacía o tiene un solo elemento: no hay nada que ordenar.
+	if (n == NULL || n->next == NULL)
+		return (1);
+	while (n->next != NULL)
+	{
+		// Si se encuentra un elemento menor que el siguiente, la lista no está ordenada.
+		if (n->num < n->next->num)
 			return (0);
 		n = n->next;
 	}

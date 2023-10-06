@@ -86,7 +86,7 @@ void	ft_printstack(t_stack *stack, char *str)//comentar funcion luego
 }
 
 /*funcion que encuentra el indice del numero num*/
-int	ft_find_index(t_stack *a, int num)
+/*int	ft_find_index(t_stack *a, int num)
 {
 	int		i;
 
@@ -98,4 +98,14 @@ int	ft_find_index(t_stack *a, int num)
 	}
 	a->index = 0;
 	return (i);
-}
+}*/
+
+/*int	ft_is_a_pos_correct(t_stack *a, t_stack *b)
+{
+	if (a->num > b->num)
+		return (1);
+	else if ((a->num < b->num) && (a->num > b->next->num))
+		return (1);
+	else
+		return (0);
+}*/
