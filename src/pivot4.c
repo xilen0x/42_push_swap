@@ -13,34 +13,60 @@
 #include "../include/push_swap.h"
 
 /* ------- ORDENAMIENTO PARA VALORES MAYORES A 5 NUMs ---------------*/
+
+int	ft_find_magic_num(t_stack *stack, int nb)
+{
+	int	i;
+	int	num_max;
+	int aux;
+
+	i = 0;
+	aux = 0;
+	num_max = INT_MIN;
+	while (stack)
+	{
+		if (nb > stack->num && stack->num > num_max)
+		{
+			printf("llega aqui\n");
+			num_max = stack->num;
+			aux = i;
+		}
+		stack = stack->next;
+		i++;
+	}
+	return (aux);
+}
+
 void	ft_order_more_5(t_stack **a, t_stack **b)
 {
+	int	i;
+	int	nb;
+	int	indice;
+	//int	max;
+	//min = ft_find_min(*a);
+	//max = ft_find_max(*a);
 	ft_pb(a, b);
 	ft_pb(a, b);
-	while (a != NULL)
+	while ((*a)->next != NULL)
 	{
-		if ((*a)->num > (*b)->num)
+		nb = (*a)->num;
+		indice = ft_find_magic_num(*b, nb);
+		//printf("INDICE: %d\n", indice);
+		//ft_pb(a, b);
+		i = 0;
+		while (i <= indice)
 		{
-			ft_pb(a, b);
-			ft_printstack(*a, "A1\n");
-			ft_printstack(*b, "B1\n");
-		}
-		else if (((*a)->num < (*b)->num) && ((*a)->num > (*b)->next->num))
-		{
-			ft_pb(a, b);
-			ft_sb(a, b);
-			ft_printstack(*a, "A2\n");
-			ft_printstack(*b, "B2\n");
-		}
-		else
-		{
-			ft_pb(a, b);
-			ft_ra(a);
-			ft_printstack(*a, "A3\n");
-			ft_printstack(*b, "B3\n");
+			printf("llega aqui2\n");
+			ft_rb(b);
+			i++;
 		}
 		(*a) = (*a)->next;
 	}
+	//nb = (*a)->num;
+	//indice = ft_find_magic_num(*b, nb);
+	//printf("INDICE: %d\n", indice);
+	ft_pb(a, b);
+
 	ft_printstack(*a, "FIN_A\n");
 	ft_printstack(*b, "FIN_B\n");
 }
