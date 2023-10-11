@@ -64,7 +64,7 @@ t_stack	*ft_newnode(int num);
 void	ft_stack_add_back(t_stack **stack, t_stack *newnode);
 //void	ft_stack_add_front(t_stack **stack, t_stack *newnode);
 t_stack	*ft_get_last_node(t_stack *stack);
-void	ft_printstack(t_stack *stack, char *str);
+void	ft_printstack(t_stack *stack_a, t_stack *stack_b, char *str);
 int		ft_lst_size(t_stack *stack);
 int		ft_find_max(t_stack *stack);
 int		ft_find_min(t_stack *stack);

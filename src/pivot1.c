@@ -18,26 +18,22 @@ void	ft_pivot(t_stack *a, t_stack *b, int ac)
 	if (ac == 2)
 	{
 		ft_sa(a);
-		ft_printstack(a, "A2\n");
-		ft_printstack(b, "B2\n");
+		ft_printstack(a, b, "\n");
 	}
 	else if (ac == 3)
 	{
 		ft_order_3(&a);
-		ft_printstack(a, "A3\n");
-		ft_printstack(b, "B3\n");
+		ft_printstack(a, b, "\n");
 	}
 	else if (ac == 4)
 	{
 		ft_order_4(&a, &b);
-		ft_printstack(a, "A4\n");
-		ft_printstack(b, "B4\n");
+		ft_printstack(a, b, "\n");
 	}
 	else if (ac == 5)
 	{
 		ft_order_5(&a, &b);
-		ft_printstack(a, "A5\n");
-		ft_printstack(b, "B5\n");
+		ft_printstack(a, b, "\n");
 	}
 	else
 	{

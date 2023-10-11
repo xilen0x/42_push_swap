@@ -18,7 +18,7 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 {
 	int	i;
 	int	num_max;
-	int aux;
+	int	aux;
 
 	i = 0;
 	aux = 0;
@@ -27,7 +27,6 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 	{
 		if (nb > stack->num && stack->num > num_max)
 		{
-			printf("llega aqui\n");
 			num_max = stack->num;
 			aux = i;
 		}
@@ -42,31 +41,24 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 	int	i;
 	int	nb;
 	int	indice;
-	//int	max;
-	//min = ft_find_min(*a);
-	//max = ft_find_max(*a);
+
 	ft_pb(a, b);
 	ft_pb(a, b);
-	while ((*a)->next != NULL)
+	ft_printstack(*a, *b, "\n");
+	while ((*a))
 	{
 		nb = (*a)->num;
 		indice = ft_find_magic_num(*b, nb);
-		//printf("INDICE: %d\n", indice);
-		//ft_pb(a, b);
 		i = 0;
 		while (i <= indice)
 		{
-			printf("llega aqui2\n");
 			ft_rb(b);
 			i++;
 		}
+		ft_pb(a, b);
+		ft_printstack(*a, *b, "\n");
 		(*a) = (*a)->next;
 	}
-	//nb = (*a)->num;
-	//indice = ft_find_magic_num(*b, nb);
-	//printf("INDICE: %d\n", indice);
-	ft_pb(a, b);
 
-	ft_printstack(*a, "FIN_A\n");
-	ft_printstack(*b, "FIN_B\n");
+	ft_printstack(*a, *b, "FIN\n");
 }

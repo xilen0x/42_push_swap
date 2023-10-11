@@ -74,14 +74,22 @@ int	ft_find_min(t_stack *stack)
 }*/
 
 /*funcion que imprime el stack*/
-void	ft_printstack(t_stack *stack, char *str)//comentar funcion luego
+void	ft_printstack(t_stack *a, t_stack *b, char *str)//comentar funcion luego
 {
-	printf("\n------ STACK ------\n");
+	printf("\n------ STACK A ------\n");
 	printf("%s\n", str);
-	while (stack != NULL)
+	while (a != NULL)
 	{
-		printf("%i\n", stack->num);
-		stack = stack->next;
+		printf("%i\n", a->num);
+		a = a->next;
+	}
+
+	printf("\n------ STACK B ------\n");
+	printf("%s\n", str);
+	while (b != NULL)
+	{
+		printf("%i\n", b->num);
+		b = b->next;
 	}
 }
 
