@@ -13,6 +13,7 @@
 #include "../include/push_swap.h"
 
 /* -------------------------------- PUSH --------------------------------*/
+
 /*pa : push a - pone el primer elemento del stack b encima del stack a.*/
 void	ft_pa(t_stack **a, t_stack **b)
 {

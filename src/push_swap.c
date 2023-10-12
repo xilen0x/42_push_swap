@@ -74,11 +74,10 @@ int	push_swap(int ac, char *av[])
 	stack_b = NULL;
 	if (ft_is_ordered(stack_a))
 	{
-		write(1, "\nLista ya ordenada!\n", 20);
+		write(1, "\n¡Lista ya ordenada!\n", 22);
 		return (0);
 	}
 	else
 		ft_pivot(stack_a, stack_b, ac);
 	return (0);
 }
-

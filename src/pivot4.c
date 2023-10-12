@@ -38,27 +38,28 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 
 void	ft_order_more_5(t_stack **a, t_stack **b)
 {
-	int	i;
-	int	nb;
-	int	indice;
+	int		i;
+	//int		min;
+	int		indice;
+	t_stack	*head;
 
 	ft_pb(a, b);
 	ft_pb(a, b);
 	ft_printstack(*a, *b, "\n");
-	while ((*a))
+	//min = ft_find_min(*a);
+	head = *a;
+	while (head->next)
 	{
-		nb = (*a)->num;
-		indice = ft_find_magic_num(*b, nb);
+		indice = ft_find_magic_num(*b, head->num);
 		i = 0;
 		while (i <= indice)
 		{
 			ft_rb(b);
 			i++;
 		}
-		ft_pb(a, b);
 		ft_printstack(*a, *b, "\n");
-		(*a) = (*a)->next;
+		ft_pb(a, b);
+		head = head->next;
 	}
-
-	ft_printstack(*a, *b, "FIN\n");
+	ft_printstack(*a, *b, "\n");
 }

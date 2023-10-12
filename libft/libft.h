@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 
+/*-----------------MANDATORY PART-----------------*/
 int		ft_isalpha(int arg);
 int		ft_isdigit(int num);
 int		ft_isalnum(int c);
@@ -54,7 +55,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_contains_digit(char *str);
 
-/*-----------------BONUS-----------------*/
+/*-----------------BONUS PART-----------------*/
 typedef struct s_list
 {
 	void			*content;

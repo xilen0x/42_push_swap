@@ -22,7 +22,6 @@
 typedef struct s_stack
 {
 	int				num;
-	//struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -44,17 +43,16 @@ typedef struct s_stack
 
 // ------------------------ Utils -------------------------- //
 int		push_swap(int ac, char *av[]);
-char	**ft_split(const char *s, char c);
 int		ft_is_ordered(t_stack *n);
 int		ft_is_inv_ordered(t_stack *n);
 int		ft_prev_split(int ac, char *av[]);
 //int		ft_find_index(t_stack *a, int num);
-int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
+//int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
 
 // ------------------------ Checks ------------------------ //
 int		ft_check_argv_are_valid(int ac, char *av[]);	
 int		ft_check_duplic(int ac, char *av[]);
-int		ft_contains_digit(char *str);
+//int		ft_contains_digit(char *str);
 int		ft_check_digits(int ac, char *av[]);
 int		ft_check_range(int ac, char *av[]);
 

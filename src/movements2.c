@@ -13,6 +13,7 @@
 #include "../include/push_swap.h"
 
 /* -------------------------------- ROTATE --------------------------------*/
+
 /*Funcion que rota los nodos, utilizada en ft_ra, ft_rb y ft_rr*/
 void	ft_rotate(t_stack **ab)
 {
