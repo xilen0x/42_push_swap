@@ -36,53 +36,61 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 	return (aux);
 }
 
-/*void	ft_order_more_5(t_stack **a, t_stack **b)
+void	ft_order_more_5(t_stack **a, t_stack **b)
 {
 	int		i;
-	//int		min;
+	int		min;
+	int		max;
 	int		indice;
 	t_stack	*head;
 
+	min = ft_find_min(*a);
+	max = ft_find_max(*a);
+	head = *a;
 	ft_pb(a, b);
+	ft_pb(a, b);
+	while ((*a)->next)
+	{
+		if ((*a)->num == min)
+			ft_ra(a);
+		if ((*a)->num == max)
+			ft_pb(a, b);
+		indice = ft_find_magic_num(*b, head->num);
+		printf("INDICE: %d\n", indice);
+		i = 1;
+		while (i <= indice)
+		{
+			ft_rb(b);
+			i++;
+		}
+		ft_pb(a, b);
+	}
+	head = head->next;
+	ft_printstack(*a, *b, "\n");
+}
+
+/*	ft_pb(a, b);
 	ft_pb(a, b);
 	ft_printstack(*a, *b, "\n");
-	//min = ft_find_min(*a);
 	head = *a;
 	while ((*a)->next)
 	{
 		indice = ft_find_magic_num(*b, head->num);
-		i = 0;
+		printf("INDICE: %d\n", indice);
+		i = 1;
 		while (i <= indice)
 		{
-			//ft_rb(b);
-			//printf("INDICE: %d\n", indice);
+			if (head->num == min)
+			{
+			}
+			
+			ft_rb(b);
 			i++;
 		}
-		ft_printstack(*a, *b, "\n");
 		ft_pb(a, b);
+		ft_printstack(*a, *b, "\n");
 		head = head->next;
 	}
 	ft_printstack(*a, *b, "\n");
-}*/
-
-void ft_order_more_5(t_stack **a, t_stack **b)
-{
-    while (*a)
-    {
-        int magic_num = ft_find_magic_num(*b, (*a)->num);
-
-        // Rotate stack A until the desired element is at the top
-        while ((*a)->num != magic_num)
-        {
-            ft_ra(a);
-            printf("RA\n");
-			(*a) = (*a)->next;
-        }
-
-        // Push the desired element to stack B
-        ft_pb(a, b);
-        printf("PB\n");
-    }
-	ft_printstack(*a, *b, "\n");
 }
-
+*/
