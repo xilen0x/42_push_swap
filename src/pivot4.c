@@ -43,10 +43,10 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 	t_stack	*head;
 
 	i = 0;
+	ft_pb(a, b);
+	ft_pb(a, b);
 	head = *a;
-	ft_pb(a, b);
-	ft_pb(a, b);
-	while ((*a))
+	while (head->next)
 	{
 		i_correct = ft_find_magic_num(*b, head->num);
 		while (i < i_correct)
@@ -54,11 +54,8 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 			ft_rb(b);
 			i++;
 		}
-		if ((*a)->num == (*b)->num)
-		{
-			ft_pb(a, b);
-		}
-		(*a) = (*a)->next;
+		ft_pb(a, b);
+		head = head->next;
 	}
 	*a = head;
 	/*while ((*a))//2do loop de test
