@@ -42,20 +42,20 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 	int		min;
 	int		max;
 	int		indice;
-	t_stack	*head;
+	//t_stack	*head;
 
 	min = ft_find_min(*a);
 	max = ft_find_max(*a);
-	head = *a;
+	//head = *a;
 	ft_pb(a, b);
 	ft_pb(a, b);
-	while ((*a)->next)
+	while (ft_lst_size(*a) > 3)
 	{
 		if ((*a)->num == min)
 			ft_ra(a);
 		if ((*a)->num == max)
 			ft_pb(a, b);
-		indice = ft_find_magic_num(*b, head->num);
+		indice = ft_find_magic_num(*b, (*a)->num);
 		printf("INDICE: %d\n", indice);
 		i = 1;
 		while (i <= indice)
@@ -64,8 +64,8 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 			i++;
 		}
 		ft_pb(a, b);
+		(*a) = (*a)->next;
 	}
-	head = head->next;
 	ft_printstack(*a, *b, "\n");
 }
 
