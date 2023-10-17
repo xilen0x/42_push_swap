@@ -13,3 +13,4 @@ src/check_argc.c
 src/*.d
 /push_swap_tester
 /push_swap_visualiser
+checker_linux
