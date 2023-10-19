@@ -39,8 +39,9 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 t_moves	ft_num_of_moves(t_stack **a, t_stack **b, t_moves moves)
 {
 	t_moves	temp;
-	int i = 0;
+	int		i;
 
+	i = 0;
 	while (*a)
 	{
 		temp.ra = i;
@@ -58,6 +59,7 @@ void	ft_exe_moves(t_stack **a, t_stack **b, t_moves moves)
 {
 	while (moves.ra > 0)
 	{
+		write (1, "test\n", 5);//aqui no entra nunca
 		ft_ra(a);
 		moves.ra--;
 	}
@@ -75,7 +77,6 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 
 	ft_pb(a, b);
 	ft_pb(a, b);
-
 	while ((*a))
 	{
 		moves.ra = 0;
@@ -85,7 +86,6 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 		q_moves = ft_num_of_moves(a, b, moves);
 		ft_exe_moves(a, b, q_moves);
 		ft_pb(a, b);
-		write (1, "test", 4);
 	}
 	ft_printstack(*a, *b, "\n");
 }
