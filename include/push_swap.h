@@ -25,21 +25,13 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-/*struct	s_moves
+typedef struct s_moves
 {
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
 	int	ra;
 	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-};
-*/
+	int	total;
+}	t_moves;
+
 
 // ------------------------ Utils -------------------------- //
 int		push_swap(int ac, char *av[]);
