@@ -36,19 +36,10 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 	return (aux);
 }
 
-int	ft_num_of_moves(t_stack **a, t_stack **b)
+int	ft_num_of_moves(t_stack **a, t_stack **b, t_moves moves)
 {
-	t_moves	moves;
 	t_moves	temp;
 
-	//cuantos ra me costaria poner a->num en posicion correcta?
-	moves.ra = ft_find_magic_num(*a, (*a)->num);
-
-	//cuantos rb me costaria poner b en posicion correcta?
-	moves.rb = ft_find_magic_num(*b, (*a)->num);
-
-	// el total menor(entre moves y temp) es el que envio a ft_exe_moves()
-	moves.total = moves.ra + moves.rb;
 	while ((*a)->next)
 	{
 		temp.ra = ft_find_magic_num(*a, (*a)->num);
@@ -60,21 +51,44 @@ int	ft_num_of_moves(t_stack **a, t_stack **b)
 	}
 	return (moves.total);
 }
-			//ft_exe_moves(moves.total, a, b);
+
+void	ft_exe_moves(t_stack **a, t_stack **b, t_moves moves)
+{
+	int	i;
+
+	i = 0;
+	while (i <= moves.ra)
+	{
+		ft_ra(a);
+		i++;
+	}
+	i = 0;
+	while (i <= moves.rb)
+	{
+		ft_rb(b);
+		i++;
+	}
+}
 
 void	ft_order_more_5(t_stack **a, t_stack **b)
 {
-	int		i;
+	t_moves	moves;
+	int	q_moves;
+	//i = 0;
+	ft_pb(a, b);
+	ft_pb(a, b);
 
-	i = 0;
-	ft_pb(a, b);
-	ft_pb(a, b);
+
+	//cuantos ra/rb me costaria poner stack en posicion correcta?
+	moves.ra = ft_find_magic_num(*a, (*a)->num);
+	moves.rb = ft_find_magic_num(*b, (*a)->num);
+	moves.total = moves.ra + moves.rb;
 
 	// calculate quantity of movements
-	printf("Cant.Mov: %d\n", ft_num_of_moves(a, b));
-
-	//execute movements
-	//ft_exe_moves();
+	q_moves = ft_num_of_moves(a, b, moves);
+	// el total menor(entre moves y temp) es el que envio a ft_exe_moves()
+	//para execute movements
+	ft_exe_moves(a, b, moves);
 
 	ft_printstack(*a, *b, "\n");
 }
