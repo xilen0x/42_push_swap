@@ -33,7 +33,7 @@ void	ft_rotate(t_stack **ab)
 /*ra : rotate a - el primer elemento se convierte en el último.*/
 void	ft_ra(t_stack **a)
 {
-	if (ft_lst_size(*a) > 1)
+	if (ft_lst_size(*a) > 0)
 	{
 		ft_rotate(a);
 		write (1, "ra\n", 3);
@@ -43,7 +43,7 @@ void	ft_ra(t_stack **a)
 /*rb : rotate b - el primer elemento se convierte en el último.*/
 void	ft_rb(t_stack **b)
 {
-	if (ft_lst_size(*b) > 1)
+	if (ft_lst_size(*b) > 0)
 	{
 		ft_rotate(b);
 		write (1, "rb\n", 3);
