@@ -51,17 +51,17 @@ void	ft_rb(t_stack **b)
 }
 
 /*rr : rotate a y rotate b a la vez.*/
-void	ft_rr(t_stack *a, t_stack *b)
+void	ft_rr(t_stack **a, t_stack **b)
 {
-	if (a && b)
+	if (*a && *b)
 	{
-		if (ft_lst_size(a) > 1)
+		if (ft_lst_size(*a) > 1)
 		{
-			ft_rotate(&a);
+			ft_rotate(a);
 		}
-		if (ft_lst_size(b) > 1)
+		if (ft_lst_size(*b) > 1)
 		{
-			ft_rotate(&b);
+			ft_rotate(b);
 		}
 		write (1, "rr\n", 3);
 	}

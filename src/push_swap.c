@@ -78,6 +78,6 @@ int	push_swap(int ac, char *av[])
 		return (0);
 	}
 	else
-		ft_pivot(stack_a, stack_b, ac);
+		ft_pivot(&stack_a, &stack_b, ac);
 	return (0);
 }

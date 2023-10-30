@@ -56,17 +56,17 @@ void	ft_rrb(t_stack **b)
 }
 
 /*rra y rrb a la vez. Los últimos elementos se convierten en los primeros.*/
-void	ft_rrr(t_stack *a, t_stack *b)
+void	ft_rrr(t_stack **a, t_stack **b)
 {
-	if (a && b)
+	if (*a && *b)
 	{
-		if (ft_lst_size(a) > 1)
+		if (ft_lst_size(*a) > 1)
 		{
-			ft_rev_rotate(&a);
+			ft_rev_rotate(a);
 		}
-		if (ft_lst_size(b) > 1)
+		if (ft_lst_size(*b) > 1)
 		{
-			ft_rev_rotate(&b);
+			ft_rev_rotate(b);
 		}
 		write (1, "rrr\n", 4);
 	}

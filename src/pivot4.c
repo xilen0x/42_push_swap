@@ -36,20 +36,20 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 	return (aux);
 }
 
-t_moves	ft_num_of_moves(t_stack **a, t_stack **b, t_moves moves)
+t_moves	ft_num_of_moves(t_stack *a, t_stack *b, t_moves moves)
 {
 	t_moves	temp;
 	int		i;
 
 	i = 0;
-	while (*a)
+	while (a)
 	{
 		temp.ra = i;
-		temp.rb = ft_find_magic_num(*b, (*a)->num);
+		temp.rb = ft_find_magic_num(b, (a)->num);
 		temp.total = temp.ra + temp.rb;
 		if (temp.total < moves.total)
 			moves = temp;
-		(*a) = (*a)->next;
+		(a) = (a)->next;
 		i++;
 	}
 	return (moves);
@@ -59,7 +59,6 @@ void	ft_exe_moves(t_stack **a, t_stack **b, t_moves moves)
 {
 	while (moves.ra > 0)
 	{
-		write (1, "test\n", 5);//aqui no entra nunca
 		ft_ra(a);
 		moves.ra--;
 	}
@@ -77,15 +76,24 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 
 	ft_pb(a, b);
 	ft_pb(a, b);
-	while ((*a))
+	while (*a)
 	{
 		moves.ra = 0;
 		moves.rb = 0;
 		moves.total = INT_MAX;
-		// calculate quantity of movements
-		q_moves = ft_num_of_moves(a, b, moves);
+		// --- calculate quantity of movements
+		q_moves = ft_num_of_moves(*a, *b, moves);
+		printf("q_moves: %d\n", q_moves.total);
+		// --- execute movements ra  rb
 		ft_exe_moves(a, b, q_moves);
 		ft_pb(a, b);
+		write (1, "test\n", 5);
+		//(*a) = (*a)->next;
 	}
+	/*while (b)
+	{
+		ft_pa(&a, &b);
+		b = b->next;
+	}*/
 	ft_printstack(*a, *b, "\n");
 }

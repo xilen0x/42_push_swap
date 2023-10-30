@@ -19,7 +19,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
-	if (ft_lst_size(*a) > 1)
+	if (ft_lst_size(*b) > 0)
 	{
 		temp = *b;
 		*b = (*b)->next;
@@ -34,7 +34,7 @@ void	ft_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
-	if (ft_lst_size(*a) > 1)
+	if (ft_lst_size(*a) > 0)
 	{
 		temp = *a;
 		*a = (*a)->next;

@@ -13,19 +13,19 @@
 #include "../include/push_swap.h"
 
 /* -------------------------------- SWAP --------------------------------*/
-void	ft_swap(t_stack *ab)
+void	ft_swap(t_stack **ab)
 {
 	int	temp;
 
-	temp = ab->num;
-	ab->num = ab->next->num;
-	ab->next->num = temp;
+	temp = (*ab)->num;
+	(*ab)->num = (*ab)->next->num;
+	(*ab)->next->num = temp;
 }
 
 /*sa : swap a - intercambia los dos primeros elementos encima del stack a.*/
-void	ft_sa(t_stack *a)
+void	ft_sa(t_stack **a)
 {
-	if (ft_lst_size(a) > 1)
+	if (ft_lst_size(*a) > 1)
 	{
 		ft_swap(a);
 		write (1, "sa\n", 3);
@@ -33,29 +33,24 @@ void	ft_sa(t_stack *a)
 }
 
 /*sb : swap b - intercambia los dos primeros elementos encima del stack b.*/
-void	ft_sb(t_stack **a, t_stack **b)
+void	ft_sb(t_stack **b)
 {
-	(void)a;
 	if (ft_lst_size(*b) > 1)
 	{
-		ft_swap(*b);
+		ft_swap(b);
 		write (1, "sb\n", 3);
 	}
 }
 
 /*ss : swap a y swap b a la vez.*/
-void	ft_ss(t_stack *a, t_stack *b)
+void	ft_ss(t_stack **a, t_stack **b)
 {
-	if (a && b)
+	if (*a && *b)
 	{
-		if (ft_lst_size(a) > 1)
-		{
+		if (ft_lst_size(*a) > 1)
 			ft_swap(a);
-		}
-		if (ft_lst_size(b) > 1)
-		{
+		if (ft_lst_size(*b) > 1)
 			ft_swap(b);
-		}
 		write (1, "ss\n", 3);
 	}
 }
