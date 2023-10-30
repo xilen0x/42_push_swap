@@ -23,6 +23,8 @@ int	ft_find_magic_num(t_stack *stack, int nb)
 	i = 0;
 	aux = 0;
 	num_max = INT_MIN;
+	if (nb < ft_find_min(stack))
+		return (ft_find_max_pos(stack));
 	while (stack)
 	{
 		if (nb > stack->num && stack->num > num_max)
@@ -45,11 +47,11 @@ t_moves	ft_num_of_moves(t_stack *a, t_stack *b, t_moves moves)
 	while (a)
 	{
 		temp.ra = i;
-		temp.rb = ft_find_magic_num(b, (a)->num);
+		temp.rb = ft_find_magic_num(b, a->num);
 		temp.total = temp.ra + temp.rb;
 		if (temp.total < moves.total)
 			moves = temp;
-		(a) = (a)->next;
+		a = a->next;
 		i++;
 	}
 	return (moves);
@@ -83,11 +85,11 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 		moves.total = INT_MAX;
 		// --- calculate quantity of movements
 		q_moves = ft_num_of_moves(*a, *b, moves);
-		printf("q_moves: %d\n", q_moves.total);
+		//printf("q_moves: %d\n", q_moves.total);
 		// --- execute movements ra  rb
 		ft_exe_moves(a, b, q_moves);
 		ft_pb(a, b);
-		write (1, "test\n", 5);
+		//write (1, "test\n", 5);
 		//(*a) = (*a)->next;
 	}
 	/*while (b)

@@ -109,6 +109,30 @@ void	ft_printstack(t_stack *a, t_stack *b, char *str)//comentar funcion luego
 	return (i);
 }*/
 
+int	ft_find_max_pos(t_stack *stack)
+{
+	int		max;
+	t_stack	*ptr;
+	int		i;
+
+	i = 0;
+	ptr = stack;
+	max = ptr->num;
+	if (ptr)
+	{
+		while (ptr->next)
+		{
+			if (ptr->next->num > max)
+			{
+				max = ptr->next->num;
+				i++;
+			}
+			ptr = ptr->next;
+		}
+	}
+	return (i);
+}
+
 /*int	ft_is_a_pos_correct(t_stack *a, t_stack *b)
 {
 	if (a->num > b->num)
