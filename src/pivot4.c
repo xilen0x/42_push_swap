@@ -71,6 +71,20 @@ void	ft_exe_moves(t_stack **a, t_stack **b, t_moves moves)
 	}
 }
 
+t_stack	*ft_order_stack(t_stack *stack)
+{
+	int	pos;
+
+	pos = ft_find_max_pos(stack);
+	printf("position: %d\n", pos);
+	while (pos > 0)
+	{
+		ft_rb(&stack);
+		pos--;
+	}
+	return (stack);
+}
+
 void	ft_order_more_5(t_stack **a, t_stack **b)
 {
 	t_moves	moves;
@@ -85,17 +99,14 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 		moves.total = INT_MAX;
 		// --- calculate quantity of movements
 		q_moves = ft_num_of_moves(*a, *b, moves);
-		//printf("q_moves: %d\n", q_moves.total);
 		// --- execute movements ra  rb
 		ft_exe_moves(a, b, q_moves);
 		ft_pb(a, b);
-		//write (1, "test\n", 5);
-		//(*a) = (*a)->next;
 	}
-	/*while (b)
+	*b = ft_order_stack(*b);
+	while (*b)
 	{
-		ft_pa(&a, &b);
-		b = b->next;
-	}*/
+		ft_pa(a, b);
+	}
 	ft_printstack(*a, *b, "\n");
 }

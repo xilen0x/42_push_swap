@@ -114,23 +114,26 @@ int	ft_find_max_pos(t_stack *stack)
 	int		max;
 	t_stack	*ptr;
 	int		i;
+	int		aux;
 
 	i = 0;
 	ptr = stack;
 	max = ptr->num;
+	aux = 0;
 	if (ptr)
 	{
-		while (ptr->next)
+		while (ptr)
 		{
-			if (ptr->next->num > max)
+			if (ptr->num > max)
 			{
-				max = ptr->next->num;
-				i++;
+				max = ptr->num;
+				aux = i;
 			}
 			ptr = ptr->next;
+			i++;
 		}
 	}
-	return (i);
+	return (aux);
 }
 
 /*int	ft_is_a_pos_correct(t_stack *a, t_stack *b)

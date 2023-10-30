@@ -46,16 +46,17 @@ void	ft_order_3(t_stack **a)
 		if ((*a)->num == ft_find_min(*a))
 		{
 			ft_rra(a);
-			ft_sa(*a);
+			ft_sa(a);
 		}
 		else if ((*a)->num == ft_find_max(*a))
 		{
+			//printf("MAX: %d\n", ft_find_max(*a));
 			ft_ra(a);
 			if (!ft_is_ordered(*a))
-				ft_sa(*a);
+				ft_sa(a);
 		}
 		else if ((*a)->next->num == ft_find_min(*a))
-			ft_sa(*a);	
+			ft_sa(a);	
 		else
 			ft_rra(a);
 	}
@@ -81,7 +82,7 @@ void	ft_order_4(t_stack **a, t_stack **b)
 		ft_pb_order3_pa(a, b);
 	else if ((*a)->next->num == min)//caso 2do valor sea el min
 	{
-		ft_sa(*a);
+		ft_sa(a);
 		ft_pb_order3_pa(a, b);
 	}
 	else if ((*a)->next->next->num == min)//caso 3er valor sea el min
