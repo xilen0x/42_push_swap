@@ -76,7 +76,6 @@ t_stack	*ft_order_stack(t_stack *stack)
 	int	pos;
 
 	pos = ft_find_max_pos(stack);
-	printf("position: %d\n", pos);
 	while (pos > 0)
 	{
 		ft_rb(&stack);
@@ -108,5 +107,5 @@ void	ft_order_more_5(t_stack **a, t_stack **b)
 	{
 		ft_pa(a, b);
 	}
-	ft_printstack(*a, *b, "\n");
+	//ft_printstack(*a, *b, "\n");
 }

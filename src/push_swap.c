@@ -31,7 +31,6 @@ int	ft_is_ordered(t_stack *n)
 /*Funcion que verifica si la lista esta inversamente ordenada*/
 int	ft_is_inv_ordered(t_stack *n)
 {
-	// Si la lista está vacía o tiene un solo elemento: no hay nada que ordenar.
 	if (n == NULL || n->next == NULL)
 		return (1);
 	while (n->next != NULL)
@@ -74,7 +73,7 @@ int	push_swap(int ac, char *av[])
 	stack_b = NULL;
 	if (ft_is_ordered(stack_a))
 	{
-		write(1, "\n¡Lista ya ordenada!\n", 22);
+		//write(1, "\n¡Lista ya ordenada!\n", 22);
 		return (0);
 	}
 	else

@@ -53,61 +53,6 @@ int	ft_find_min(t_stack *stack)
 	return (min);
 }
 
-/*funcion que calcula el segundo numero minimo*/
-/*int	ft_find_second_min(t_stack *head, int first_min)
-{
-	int		second_min;
-	t_stack	*current;
-
-	second_min = INT_MAX;
-	current = head;
-
-	while (current != NULL)
-	{
-		if (current->num < second_min && current->num != first_min)
-		{
-			second_min = current->num;
-		}
-		current = current->next;
-	}
-	return (second_min);
-}*/
-
-/*funcion que imprime el stack*/
-void	ft_printstack(t_stack *a, t_stack *b, char *str)//comentar funcion luego
-{
-	printf("\n*********************************\n");
-	printf("\n------ STACK A ------\n");
-	printf("%s\n", str);
-	while (a != NULL)
-	{
-		printf("%i\n", a->num);
-		a = a->next;
-	}
-
-	printf("\n------ STACK B ------\n");
-	printf("%s\n", str);
-	while (b != NULL)
-	{
-		printf("%i\n", b->num);
-		b = b->next;
-	}
-}
-
-/*funcion que encuentra el indice del numero num*/
-/*int	ft_find_index(t_stack *a, int num)
-{
-	int		i;
-
-	i = 0;
-	while (a->num != num)
-	{
-		i++;
-		a = a->next;
-	}
-	a->index = 0;
-	return (i);
-}*/
 
 int	ft_find_max_pos(t_stack *stack)
 {
@@ -136,12 +81,23 @@ int	ft_find_max_pos(t_stack *stack)
 	return (aux);
 }
 
-/*int	ft_is_a_pos_correct(t_stack *a, t_stack *b)
+/*funcion que imprime el stack*/
+/*void	ft_printstack(t_stack *a, t_stack *b, char *str)//comentar funcion luego
 {
-	if (a->num > b->num)
-		return (1);
-	else if ((a->num < b->num) && (a->num > b->next->num))
-		return (1);
-	else
-		return (0);
+	printf("\n*********************************\n");
+	printf("\n------ STACK A ------\n");
+	printf("%s\n", str);
+	while (a != NULL)
+	{
+		printf("%i\n", a->num);
+		a = a->next;
+	}
+
+	printf("\n------ STACK B ------\n");
+	printf("%s\n", str);
+	while (b != NULL)
+	{
+		printf("%i\n", b->num);
+		b = b->next;
+	}
 }*/

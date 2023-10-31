@@ -10,17 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Funciones permitidas:
-◦ write
-◦ read
-◦ malloc
-◦ free
-◦ exit
-
-https://www.figma.com/file/kJE3C5sebDLtd5imytkOUa/Untitled?type=design&node-id=0%3A1&mode=design&t=nONFp0J2mEaVbnq3-1
-
-*/
-
 #include "../include/push_swap.h"
 
 int	main(int ac, char *av[])

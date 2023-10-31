@@ -44,13 +44,13 @@ void	ft_order_5(t_stack **a, t_stack **b)
 		ft_pb_order4_pa(a, b);
 	else if ((*a)->next->num == min)//caso 2do valor sea el min
 	{
-		ft_sa(*a);
+		ft_sa(a);
 		ft_pb_order4_pa(a, b);
 	}
 	else if ((*a)->next->next->num == min)//caso 3er valor sea el min
 	{
 		ft_ra(a);
-		ft_sa(*a);
+		ft_sa(a);
 		ft_pb_order4_pa(a, b);
 	}
 	else//caso 4to o 5to valor es el min
