@@ -7,9 +7,7 @@
 a.out.dSYM
 */a.out.dSYM/*
 push_swap.h.gch
-libft/
 libft/obj/
-src/check_argc.c
 src/*.d
 /push_swap_tester
 /push_swap_visualiser
