@@ -38,7 +38,7 @@ static char	*ft_isspace(char *str)
 	return (str);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	short int	parity;
 	int			number;
