@@ -69,18 +69,17 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ft_check_digits(ac, av) == 1)
 	{
-		//write (1, "Error\n", 6);antes de entregar reemplazar con este write
-		write (1, "error con digito\n", 17);
+		write (2, "Error1\n", 7);
 		return (1);
 	}
 	if (ft_check_range(ac, av) == 1)
 	{
-		write (1, "error con rango\n", 16);
+		write (2, "Error2\n", 7);
 		return (1);
 	}
 	if (ft_check_duplic(ac, av) == 1)
 	{
-		write (1, "error de duplicado\n", 19);
+		write (2, "Error3\n", 7);
 		return (1);
 	}
 	return (0);

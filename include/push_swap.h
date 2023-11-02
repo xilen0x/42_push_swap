@@ -22,7 +22,6 @@
 typedef struct s_stack
 {
 	int				num;
-	//int				index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -37,7 +36,7 @@ typedef struct s_moves
 // ------------------------ Utils -------------------------- //
 int		push_swap(int ac, char *av[]);
 int		ft_is_ordered(t_stack *n);
-int		ft_is_inv_ordered(t_stack *n);
+//int		ft_is_inv_ordered(t_stack *n);
 int		ft_prev_split(int ac, char *av[]);
 //int		ft_find_index(t_stack *a, int num);
 int		ft_find_max_pos(t_stack *stack);

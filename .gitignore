@@ -13,3 +13,5 @@ src/*.d
 /push_swap_visualiser
 checker_linux
 push_swap
+checker_Mac
+libft/libft.a

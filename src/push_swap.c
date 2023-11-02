@@ -29,7 +29,7 @@ int	ft_is_ordered(t_stack *n)
 }
 
 /*Funcion que verifica si la lista esta inversamente ordenada*/
-int	ft_is_inv_ordered(t_stack *n)
+/*int	ft_is_inv_ordered(t_stack *n)
 {
 	if (n == NULL || n->next == NULL)
 		return (1);
@@ -41,7 +41,7 @@ int	ft_is_inv_ordered(t_stack *n)
 		n = n->next;
 	}
 	return (1);
-}
+}*/
 
 /*Funcion que llama a ft_split y check si nums son validos. Luego envia todo a push_swap*/
 int	ft_prev_split(int ac, char *av[])
@@ -59,6 +59,7 @@ int	ft_prev_split(int ac, char *av[])
 			return (1);
 		push_swap(i, split_result);
 	}
+	free(split_result);
 	return (0);
 }
 
