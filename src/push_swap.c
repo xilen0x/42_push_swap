@@ -49,16 +49,6 @@ int	ft_prev_split(int ac, char *av[])
 	char	**split_result;
 	int		i;
 
-	i = 0;
-	while (av[1][i])
-	{
-		if (!ft_isdigit(av[1][i]) && av[1][i] != ' ')
-		{
-			write (2, "Error\n", 6);
-			return (1);
-		}
-		i++;
-	}
 	split_result = ft_split(av[1], ' ');
 	i = 0;
 	while (split_result[i])
