@@ -14,10 +14,22 @@
 
 int	main(int ac, char *av[])
 {
+	int	i;
+
+	i = 0;
 	if (ac > 1)
 	{
 		if (ac == 2)
 		{
+			while (av[1][i])
+			{
+				if (!ft_isdigit(av[1][i]) && av[1][i] != ' ')
+				{
+					write (2, "Error\n", 6);
+					return (1);
+				}
+				i++;
+			}
 			ft_prev_split(ac, av);
 			return (0);
 		}

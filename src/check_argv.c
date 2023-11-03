@@ -48,10 +48,11 @@ int	ft_check_duplic(int ac, char *av[])
 	int	i;
 	int	j;
 
-	i = 1;
-	j = 1;
+	i = 0;
+	j = 0;
 	while (i < ac)
 	{
+		printf("entraaa %s", av[i]);
 		while (j < (ac - 1))
 		{
 			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
@@ -69,17 +70,17 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 {
 	if (ft_check_digits(ac, av) == 1)
 	{
-		write (2, "Error1\n", 7);
+		write (2, "Error\n", 6);
 		return (1);
 	}
 	if (ft_check_range(ac, av) == 1)
 	{
-		write (2, "Error2\n", 7);
+		write (2, "Error\n", 6);
 		return (1);
 	}
 	if (ft_check_duplic(ac, av) == 1)
 	{
-		write (2, "Error3\n", 7);
+		write (2, "Error\n", 6);
 		return (1);
 	}
 	return (0);

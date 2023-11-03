@@ -28,41 +28,6 @@ int	ft_is_ordered(t_stack *n)
 	return (1);
 }
 
-/*Funcion que verifica si la lista esta inversamente ordenada*/
-/*int	ft_is_inv_ordered(t_stack *n)
-{
-	if (n == NULL || n->next == NULL)
-		return (1);
-	while (n->next != NULL)
-	{
-		// Si se encuentra un elemento menor que el siguiente, la lista no está ordenada.
-		if (n->num < n->next->num)
-			return (0);
-		n = n->next;
-	}
-	return (1);
-}*/
-
-/*Funcion que llama a ft_split y check si nums son validos. Luego envia todo a push_swap*/
-int	ft_prev_split(int ac, char *av[])
-{
-	char	**split_result;
-	int		i;
-
-	split_result = ft_split(av[1], ' ');
-	i = 0;
-	while (split_result[i])
-		i++;
-	if (i > 1)
-	{
-		if (ft_check_argv_are_valid(ac, split_result))
-			return (1);
-		push_swap(i, split_result);
-	}
-	free(split_result);
-	return (0);
-}
-
 /*Funcion que llama a ft_init_list para inicializar lista A
 y luego envia todo a ft_pivot */
 int	push_swap(int ac, char *av[])
@@ -73,11 +38,29 @@ int	push_swap(int ac, char *av[])
 	stack_a = ft_init_list(av);
 	stack_b = NULL;
 	if (ft_is_ordered(stack_a))
-	{
-		//write(1, "\n¡Lista ya ordenada!\n", 22);
 		return (0);
-	}
 	else
 		ft_pivot(&stack_a, &stack_b, ac);
+	return (0);
+}
+
+/*Funcion que llama a ft_split y check si nums son validos. Luego envia todo a push_swap*/
+int	ft_prev_split(int ac, char *av[])
+{
+	char	**split_result;
+	int		i;
+
+	(void)ac;
+	split_result = ft_split(av[1], ' ');
+	i = 0;
+	while (split_result[i])
+		i++;
+	if (i > 1)
+	{
+		if (ft_check_argv_are_valid(i, split_result))
+			return (1);
+		push_swap(i, split_result);
+	}
+	free(split_result);
 	return (0);
 }
