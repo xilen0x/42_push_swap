@@ -52,7 +52,6 @@ int	ft_check_duplic(int ac, char *av[])
 	j = 0;
 	while (i < ac)
 	{
-		printf("entraaa %s", av[i]);
 		while (j < (ac - 1))
 		{
 			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
