@@ -17,28 +17,25 @@ int	main(int ac, char *av[])
 	int	i;
 
 	i = 0;
-	if (ac > 1)
+	if (ac == 2)
 	{
-		if (ac == 2)
+		while (av[1][i])
 		{
-			while (av[1][i])
+			if ((!ft_isdigit(av[1][i]) && av[1][i] != ' ') || av[1][i] != '\0')
 			{
-				if (!ft_isdigit(av[1][i]) && av[1][i] != ' ')
-				{
-					write (2, "Error\n", 6);
-					return (1);
-				}
-				i++;
-			}
-			ft_prev_split(ac, av);
-			return (0);
-		}
-		else
-		{
-			if (ft_check_argv_are_valid(ac, av))
+				write (2, "Error\n", 6);
 				return (1);
-			push_swap(ac - 1, av + 1);
+			}
+			i++;
 		}
+		ft_prev_split(ac, av);
+		return (0);
+	}
+	else if (ac > 2)
+	{
+		if (ft_check_argv_are_valid(ac, av))
+			return (1);
+		push_swap(ac - 1, av + 1);
 	}
 	return (0);
 }
