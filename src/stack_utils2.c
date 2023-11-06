@@ -81,6 +81,11 @@ int	ft_find_max_pos(t_stack *stack)
 	return (aux);
 }
 
+int	ft_error(void)
+{
+	write (2, "Error\n", 6);
+	return (1);
+}
 /*funcion que imprime el stack*/
 /*void	ft_printstack(t_stack *a, t_stack *b, char *str)//comentar funcion luego
 {

@@ -15,3 +15,6 @@ checker_linux
 push_swap
 checker_Mac
 libft/libft.a
+Push-Swap-Tester/
+push_swap_test.sh
+traces.txt

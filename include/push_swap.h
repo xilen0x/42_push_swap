@@ -40,6 +40,7 @@ int		ft_is_ordered(t_stack *n);
 int		ft_prev_split(int ac, char *av[]);
 //int		ft_find_index(t_stack *a, int num);
 int		ft_find_max_pos(t_stack *stack);
+int		ft_error(void);
 //int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
 
 // ------------------------ Checks ------------------------ //

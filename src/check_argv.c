@@ -72,12 +72,17 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 		write (2, "Error\n", 6);
 		return (1);
 	}
-	if (ft_check_range(ac, av) == 1)
+	else if (ft_check_range(ac, av) == 1)
 	{
 		write (2, "Error\n", 6);
 		return (1);
 	}
-	if (ft_check_duplic(ac, av) == 1)
+	else if (ft_check_duplic(ac, av) == 1)
+	{
+		write (2, "Error\n", 6);
+		return (1);
+	}
+	else if (av[1][0] < 48)
 	{
 		write (2, "Error\n", 6);
 		return (1);
