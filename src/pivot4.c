@@ -59,6 +59,12 @@ t_moves	ft_num_of_moves(t_stack *a, t_stack *b, t_moves moves)
 
 void	ft_exe_moves(t_stack **a, t_stack **b, t_moves moves)
 {
+	while ((moves.ra > 0) && (moves.rb > 0))
+	{
+		ft_rr(a, b);
+		moves.ra--;
+		moves.rb--;
+	}
 	while (moves.ra > 0)
 	{
 		ft_ra(a);

@@ -56,15 +56,10 @@ int	ft_check_duplic(int ac, char *av[])
 
 	i = 1;
 	j = i + 1;
-	//printf("AC: %d\n", ac);
 	while (i < ac) 
 	{
-		//printf("I: %d\n", i);
 		while (j < ac)
 		{
-			//printf("J: %d\n", j);
-			//printf("av[i]: %s\n", av[i]);
-			//printf("av[j]: %s\n", av[j]);
 			if (ft_atol(av[i]) == ft_atol(av[j]))
 				return (1);
 			j++;
@@ -78,6 +73,11 @@ int	ft_check_duplic(int ac, char *av[])
 /*------------------ CHECKS ------------------*/
 int	ft_check_argv_are_valid(int ac, char *av[])
 {
+	if (av[1][0] == '\0' || av[1][0] == ' ')
+	{
+		write (2, "Error\n", 6);
+		return (1);
+	}
 	if (ft_check_digits(ac, av) == 1)
 	{
 		write (2, "Error\n", 6);

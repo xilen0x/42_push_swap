@@ -37,13 +37,13 @@ int	push_swap(int ac, char *av[])
 
 	stack_a = ft_init_list(av);
 	stack_b = NULL;
-	if (ft_is_ordered(stack_a))
-		return (0);
+	if (!ft_is_ordered(stack_a))
+		ft_pivot(&stack_a, &stack_b, ac);
 	else
 	{
-		ft_pivot(&stack_a, &stack_b, ac);
 		ft_lst_clear(&stack_a);
 		ft_lst_clear(&stack_b);
+		return (0);
 	}
 	return (0);
 }
