@@ -13,7 +13,7 @@ OBJS_DIR =	objs/
 OBJ_FILES = $(SRC_FILES:.c=.o)
 OBJS = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
 DEPS        := $(OBJS:.o=.d)
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 AR = ar rc
@@ -25,10 +25,10 @@ subsystems:
 			@make -C $(LIBFT_DIR)
 
 $(NAME):	subsystems $(OBJS_DIR) $(OBJS)
-			@$(CC) $(CFLAGS) $(OBJS) -L libft/ -lft -o $@
+			@$(CC) $(CFLAGS) $(OBJS) -L libft/ -lft -o $@ -g
 
 $(OBJS_DIR):
-						@mkdir $@
+			@mkdir $@
 
 $(OBJS_DIR)%.o:	$(SRCS_DIR)%.c
 				$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)

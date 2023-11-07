@@ -31,18 +31,11 @@ IMPLEMENTATION NOTES
 
 #include "libft.h"
 
-char	*ft_isspace(char *str)
+long	ft_atol(const char *str)
 {
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		++str;
-	return (str);
-}
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	res;
-	int	sign;
+	int		i;
+	long	res;
+	int		sign;
 
 	i = 0;
 	res = 0;

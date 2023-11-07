@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-/*Function that verifies if the c parameter is a digit or not*/
 int	ft_contains_digit(char *c)
 {
 	if (ft_atoi(c) < 0)

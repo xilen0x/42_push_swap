@@ -49,7 +49,7 @@ int	push_swap(int ac, char *av[])
 }
 
 /*Funcion que llama a ft_split y check si nums son validos. Luego envia todo a push_swap*/
-int	ft_prev_split(int ac, char *av[])
+/*int	ft_prev_split(int ac, char *av[])
 {
 	char	**split_result;
 	int		i;
@@ -68,3 +68,4 @@ int	ft_prev_split(int ac, char *av[])
 	ft_free_split(split_result);
 	return (0);
 }
+*/

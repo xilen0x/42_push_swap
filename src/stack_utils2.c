@@ -81,7 +81,7 @@ int	ft_find_max_pos(t_stack *stack)
 	return (aux);
 }
 
-int	ft_check_argv_are_valid2(char *av[])
+/*int	ft_check_argv_are_valid2(char *av[])
 {
 	int		i;
 	char	*str;
@@ -103,7 +103,7 @@ int	ft_check_argv_are_valid2(char *av[])
 		i++;
 	}
 	return (0);
-}
+}*/
 
 void	ft_lst_clear(t_stack **lst)
 {

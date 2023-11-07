@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_test_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: castorga <castorga@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 11:32:41 by castorga          #+#    #+#             */
-/*   Updated: 2023/08/22 12:38:38 by castorga         ###   ########.fr       */
+/*   Created: 2023/11/07 11:02:26 by castorga          #+#    #+#             */
+/*   Updated: 2023/11/07 11:02:29 by castorga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char *av[])
+long	ft_test_atoi(const char *str)
 {
-	int	i;
+	int		i;
+	long	res;
 
 	i = 0;
-	if (ac > 1)
-	{
-		if (ft_check_argv_are_valid(ac, av))
-			return (1);
-		push_swap(ac - 1, av + 1);
-	}
+	res = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	return (1);
+}
+
+/*int	main(void)
+{
+	char	*s = "-5e45";
+	//const char *s = "   ---+--+1234ab567";
+
+	printf("%ld\n", ft_test_atoi(s));
 	return (0);
 }
+*/

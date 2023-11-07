@@ -16,35 +16,37 @@
 int	ft_check_digits(int ac, char *av[])
 {
 	int	i;
-	int	num;
+	int	j;
 
 	i = 1;
 	while (i < ac)
 	{
-		num = ft_atoi(av[i]);
-		if (num > INT_MAX || num < INT_MIN)
-			return (1);
-		else if ((av[i][0] != '-' && !ft_isdigit(av[i][0])) || (av[i][0] == '-' && !ft_isdigit(av[i][1])))
-			return (1);
+		j = 0;
+		while (av[i][j])
+		{
+			if (!ft_contains_digit(av[i]))
+				return (1);
+			j++;
+		}
 		i++;
 	}
 	return (0);
 }
 
 /*---------- CHECK RANGE AV ----------*/
-/*int	ft_check_range(int ac, char *av[])
+int	ft_check_range(int ac, char *av[])
 {
 	int	i;
 
 	i = 1;
 	while (i < ac)
 	{
-		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
+		if (ft_atol(av[i]) > INT_MAX || ft_atol(av[i]) < INT_MIN)
 			return (1);
 		i++;
 	}
 	return (0);
-}*/
+}
 
 /*---------- CHECK DUPLICATES ----------*/
 int	ft_check_duplic(int ac, char *av[])
@@ -52,18 +54,23 @@ int	ft_check_duplic(int ac, char *av[])
 	int	i;
 	int	j;
 
-	i = 0;
-	j = 0;
-	while (i < ac)
+	i = 1;
+	j = i + 1;
+	//printf("AC: %d\n", ac);
+	while (i < ac) 
 	{
-		while (j < (ac - 1))
+		//printf("I: %d\n", i);
+		while (j < ac)
 		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j + 1]))
+			//printf("J: %d\n", j);
+			//printf("av[i]: %s\n", av[i]);
+			//printf("av[j]: %s\n", av[j]);
+			if (ft_atol(av[i]) == ft_atol(av[j]))
 				return (1);
 			j++;
 		}
 		i++;
-		j = i;
+		j = i + 1;
 	}
 	return (0);
 }
@@ -76,11 +83,11 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 		write (2, "Error\n", 6);
 		return (1);
 	}
-	/*else if (ft_check_range(ac, av) == 1)
+	else if (ft_check_range(ac, av) == 1)
 	{
 		write (2, "Error\n", 6);
 		return (1);
-	}*/
+	}
 	else if (ft_check_duplic(ac, av) == 1)
 	{
 		write (2, "Error\n", 6);

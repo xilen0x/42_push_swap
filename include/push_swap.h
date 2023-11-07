@@ -36,12 +36,12 @@ typedef struct s_moves
 // ------------------------ Utils -------------------------- //
 int		push_swap(int ac, char *av[]);
 int		ft_is_ordered(t_stack *n);
-//int		ft_is_inv_ordered(t_stack *n);
 int		ft_prev_split(int ac, char *av[]);
 void	ft_free_split(char **array_strings);
 int		ft_find_max_pos(t_stack *stack);
 int		ft_check_argv_are_valid2(char *av[]);
 char	*ft_isspace(char *str);
+//int		ft_is_inv_ordered(t_stack *n);
 //int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
 
 // ------------------------ Checks ------------------------ //
@@ -49,19 +49,21 @@ int		ft_check_argv_are_valid(int ac, char *av[]);
 int		ft_check_duplic(int ac, char *av[]);
 int		ft_contains_digit(char *str);
 int		ft_check_digits(int ac, char *av[]);
-int		ft_check_range(int ac, char *av[]);
+int		ft_check_digits_2(int ac, char *av[]);
+int		ft_contains_digit_2(char *c);
+//int		ft_check_range(int ac, char *av[]);
 
 // ------------------------ List & nodes ------------------ //
 t_stack	*ft_init_list(char **av);
 t_stack	*ft_newnode(int num);
 void	ft_stack_add_back(t_stack **stack, t_stack *newnode);
-//void	ft_stack_add_front(t_stack **stack, t_stack *newnode);
 t_stack	*ft_get_last_node(t_stack *stack);
-//void	ft_printstack(t_stack *stack_a, t_stack *stack_b, char *str);
 int		ft_lst_size(t_stack *stack);
 int		ft_find_max(t_stack *stack);
 int		ft_find_min(t_stack *stack);
 void	ft_lst_clear(t_stack **lst);
+//void	ft_stack_add_front(t_stack **stack, t_stack *newnode);
+//void	ft_printstack(t_stack *stack_a, t_stack *stack_b, char *str);
 //int		ft_find_second_min(t_stack *head, int first_min);
 
 // ------------------------ Pivots ------------------------ //
@@ -78,14 +80,11 @@ void	ft_sa(t_stack **a);
 void	ft_sb(t_stack **b);
 void	ft_ss(t_stack **a, t_stack **b);
 void	ft_swap(t_stack **ab);
-
 void	ft_pa(t_stack **a, t_stack **b);
 void	ft_pb(t_stack **a, t_stack **b);
-
 void	ft_ra(t_stack **a);
 void	ft_rb(t_stack **b);
 void	ft_rr(t_stack **a, t_stack **b);
-
 void	ft_rra(t_stack **a);
 void	ft_rrb(t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
