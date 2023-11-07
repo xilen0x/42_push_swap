@@ -52,7 +52,7 @@ static size_t	ft_real_strlen(const char *s, char c)
 	return (counter);
 }
 
-static void	ft_free_split(char **array_strings)
+void	ft_free_split(char **array_strings)
 {
 	size_t	i;
 

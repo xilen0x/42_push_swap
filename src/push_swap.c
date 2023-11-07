@@ -40,7 +40,11 @@ int	push_swap(int ac, char *av[])
 	if (ft_is_ordered(stack_a))
 		return (0);
 	else
+	{
 		ft_pivot(&stack_a, &stack_b, ac);
+		ft_lst_clear(&stack_a);
+		ft_lst_clear(&stack_b);
+	}
 	return (0);
 }
 
@@ -61,6 +65,6 @@ int	ft_prev_split(int ac, char *av[])
 			return (1);
 		push_swap(i, split_result);
 	}
-	free(split_result);
+	ft_free_split(split_result);
 	return (0);
 }

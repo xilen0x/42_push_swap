@@ -38,9 +38,10 @@ int		push_swap(int ac, char *av[]);
 int		ft_is_ordered(t_stack *n);
 //int		ft_is_inv_ordered(t_stack *n);
 int		ft_prev_split(int ac, char *av[]);
-//int		ft_find_index(t_stack *a, int num);
+void	ft_free_split(char **array_strings);
 int		ft_find_max_pos(t_stack *stack);
-int		ft_error(void);
+int		ft_check_argv_are_valid2(char *av[]);
+char	*ft_isspace(char *str);
 //int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
 
 // ------------------------ Checks ------------------------ //
@@ -60,6 +61,7 @@ t_stack	*ft_get_last_node(t_stack *stack);
 int		ft_lst_size(t_stack *stack);
 int		ft_find_max(t_stack *stack);
 int		ft_find_min(t_stack *stack);
+void	ft_lst_clear(t_stack **lst);
 //int		ft_find_second_min(t_stack *head, int first_min);
 
 // ------------------------ Pivots ------------------------ //

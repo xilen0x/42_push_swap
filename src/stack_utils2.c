@@ -81,11 +81,45 @@ int	ft_find_max_pos(t_stack *stack)
 	return (aux);
 }
 
-int	ft_error(void)
+int	ft_check_argv_are_valid2(char *av[])
 {
-	write (2, "Error\n", 6);
-	return (1);
+	int		i;
+	char	*str;
+
+	i = 0;
+	while (av[1][i])
+	{
+		str = ft_isspace((char *)av);
+		if (!(str[1] >= '0' && str[1] <= '9'))
+		{
+			write (2, "Error\n", 6);
+			return (1);
+		}
+		else if (!ft_isdigit(av[1][i]) && av[1][i] != ' ')
+		{
+			write (2, "Error\n", 6);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
 }
+
+void	ft_lst_clear(t_stack **lst)
+{
+	t_stack	*current;
+	t_stack	*next;
+
+	current = *lst;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*lst = NULL;
+}
+
 /*funcion que imprime el stack*/
 /*void	ft_printstack(t_stack *a, t_stack *b, char *str)//comentar funcion luego
 {

@@ -21,16 +21,13 @@ int	main(int ac, char *av[])
 	{
 		if (ac == 2)
 		{
-			while (av[1][i])
+			if (!ft_check_digits(ac, av))
+				ft_prev_split(ac, av);
+			else
 			{
-				if (!ft_isdigit(av[1][i]) && av[1][i] != ' ')
-				{
-					write (2, "Error\n", 6);
-					return (1);
-				}
-				i++;
+				write (2, "Error\n", 6);
+				return (1);
 			}
-			ft_prev_split(ac, av);
 			return (0);
 		}
 		else

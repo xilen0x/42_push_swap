@@ -16,11 +16,15 @@
 int	ft_check_digits(int ac, char *av[])
 {
 	int	i;
+	int	num;
 
 	i = 1;
 	while (i < ac)
 	{
-		if (ft_contains_digit(av[i]) == 0)
+		num = ft_atoi(av[i]);
+		if (num > INT_MAX || num < INT_MIN)
+			return (1);
+		else if ((av[i][0] != '-' && !ft_isdigit(av[i][0])) || (av[i][0] == '-' && !ft_isdigit(av[i][1])))
 			return (1);
 		i++;
 	}
@@ -28,7 +32,7 @@ int	ft_check_digits(int ac, char *av[])
 }
 
 /*---------- CHECK RANGE AV ----------*/
-int	ft_check_range(int ac, char *av[])
+/*int	ft_check_range(int ac, char *av[])
 {
 	int	i;
 
@@ -40,7 +44,7 @@ int	ft_check_range(int ac, char *av[])
 		i++;
 	}
 	return (0);
-}
+}*/
 
 /*---------- CHECK DUPLICATES ----------*/
 int	ft_check_duplic(int ac, char *av[])
@@ -54,7 +58,7 @@ int	ft_check_duplic(int ac, char *av[])
 	{
 		while (j < (ac - 1))
 		{
-			if (ft_strncmp(av[i], av[j + 1], INT_MAX) == 0)
+			if (ft_atoi(av[i]) == ft_atoi(av[j + 1]))
 				return (1);
 			j++;
 		}
@@ -72,17 +76,12 @@ int	ft_check_argv_are_valid(int ac, char *av[])
 		write (2, "Error\n", 6);
 		return (1);
 	}
-	else if (ft_check_range(ac, av) == 1)
+	/*else if (ft_check_range(ac, av) == 1)
 	{
 		write (2, "Error\n", 6);
 		return (1);
-	}
+	}*/
 	else if (ft_check_duplic(ac, av) == 1)
-	{
-		write (2, "Error\n", 6);
-		return (1);
-	}
-	else if (av[1][0] < 48)
 	{
 		write (2, "Error\n", 6);
 		return (1);
