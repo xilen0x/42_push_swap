@@ -56,7 +56,7 @@ int	ft_check_duplic(int ac, char *av[])
 
 	i = 1;
 	j = i + 1;
-	while (i < ac) 
+	while (i < ac)
 	{
 		while (j < ac)
 		{

@@ -17,12 +17,7 @@ int	main(int ac, char *av[])
 	int	i;
 
 	i = 0;
-	if (ac == 1)
-	{
-		write (2, "Error\n", 6);
-		return (1);
-	}
-	else if (ac > 1)
+	if (ac > 1)
 	{
 		if (ft_check_argv_are_valid(ac, av))
 			return (1);

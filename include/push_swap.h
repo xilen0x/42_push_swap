@@ -36,11 +36,11 @@ typedef struct s_moves
 // ------------------------ Utils -------------------------- //
 int		push_swap(int ac, char *av[]);
 int		ft_is_ordered(t_stack *n);
-int		ft_prev_split(int ac, char *av[]);
 void	ft_free_split(char **array_strings);
 int		ft_find_max_pos(t_stack *stack);
-int		ft_check_argv_are_valid2(char *av[]);
 char	*ft_isspace(char *str);
+//int		ft_check_argv_are_valid2(char *av[]);
+//int		ft_prev_split(int ac, char *av[]);
 //int		ft_is_inv_ordered(t_stack *n);
 //int		ft_is_a_pos_correct(t_stack *a, t_stack *b);
 
@@ -49,8 +49,8 @@ int		ft_check_argv_are_valid(int ac, char *av[]);
 int		ft_check_duplic(int ac, char *av[]);
 int		ft_contains_digit(char *str);
 int		ft_check_digits(int ac, char *av[]);
-int		ft_check_digits_2(int ac, char *av[]);
-int		ft_contains_digit_2(char *c);
+//int		ft_check_digits_2(int ac, char *av[]);
+//int		ft_contains_digit_2(char *c);
 //int		ft_check_range(int ac, char *av[]);
 
 // ------------------------ List & nodes ------------------ //
